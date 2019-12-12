@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.59.1" />
+
+<link rel="canonical" href="/2013/06/05/dovecot-virtuals-are-spiffy/">
+<meta property="og:title" content="Dovecot Virtuals are Spiffy!" />
+<meta property="og:description" content="One of my goals with the new server was to learn as much as possible. In that light, I decided I would use as many new (to me) bits of server software as I could. I will do a write up soon on the whole setup, but for now I want to talk briefly about Dovecot&rsquo;s virtual plugin. (Dovecot is the IMAP server I selected for my setup.)
+As a gmail convert, I&rsquo;ve been trying to find ways to replicate the bits of the &ldquo;gmail experience&rdquo; that I liked." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/2013/06/05/dovecot-virtuals-are-spiffy/" />
+<meta property="article:published_time" content="2013-06-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-06-05T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dovecot Virtuals are Spiffy!"/>
+<meta name="twitter:description" content="One of my goals with the new server was to learn as much as possible. In that light, I decided I would use as many new (to me) bits of server software as I could. I will do a write up soon on the whole setup, but for now I want to talk briefly about Dovecot&rsquo;s virtual plugin. (Dovecot is the IMAP server I selected for my setup.)
+As a gmail convert, I&rsquo;ve been trying to find ways to replicate the bits of the &ldquo;gmail experience&rdquo; that I liked."/>
+
+
+<meta itemprop="name" content="Dovecot Virtuals are Spiffy!">
+<meta itemprop="description" content="One of my goals with the new server was to learn as much as possible. In that light, I decided I would use as many new (to me) bits of server software as I could. I will do a write up soon on the whole setup, but for now I want to talk briefly about Dovecot&rsquo;s virtual plugin. (Dovecot is the IMAP server I selected for my setup.)
+As a gmail convert, I&rsquo;ve been trying to find ways to replicate the bits of the &ldquo;gmail experience&rdquo; that I liked.">
+
+
+<meta itemprop="datePublished" content="2013-06-05T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-06-05T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="760">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Dovecot Virtuals are Spiffy! 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="/">Greg&#39;s Adventures</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/about/"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:greg@greglincoln.com"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/tetious" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+  <a href="https://gitlab.com/tetious" target="_blank"><div class="social-link">gl</div></a>
+  
+
+  
+  <a href="https://twitter.com/tetious" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Dovecot Virtuals are Spiffy! </h1>
+    <div class="content"> 
+
+<p>One of my goals with the new server was to learn as much as possible. In that light, I decided I would use as many new (to me) bits of server software as I could. I will do a write up soon on the whole setup, but for now I want to talk briefly about Dovecot&rsquo;s virtual plugin. (Dovecot is the IMAP server I selected for my setup.)</p>
+
+<p>As a gmail convert, I&rsquo;ve been trying to find ways to replicate the bits of the &ldquo;gmail experience&rdquo; that I liked. One of my first priorities was filter based, server-side labels. I used labels at gmail in a way that is probably similar to most people where the labels can be broken down into two types: labels as folders, fed via a filter rule (for mail lists and such) and labels as &ldquo;flags&rdquo; that I applied manually.</p>
+
+<p>Replicating the filter/folder analogy server-side with IMAP would traditionally involve sieve and a folder, but having to set up an extra folder for each &ldquo;label&rdquo; bugged me. What if I wanted something to show up two places? My first attempt at a better way was to use <a href="http://www.postbox-inc.com/">Postbox&rsquo;s</a> smart folders. These allow you to set up a virtual folder that runs a search (either server side or on your local indexes) and populates the folder based on that search. This met half of my pair of requirements, but was not server-side, so I couldn&rsquo;t use the folders on my phone without replicating them there, which is not DRY.</p>
+
+<p>It turns out that the Dovecot developers thought of this, and have an elegant solution via the &ldquo;virtual&rdquo; mailbox plugin. At first glance, you might think this is meant to facilitate mailboxes for users without unix accounts on the machine, as that is often what this terminology means in the context of mail servers, but in this case it isn&rsquo;t. What it is instead is easily configured, server-side smart folders!</p>
+
+<p>Setting them up takes only a few minutes (<a href="http://wiki2.dovecot.org/Plugins/Virtual">the documentation</a>) is well written) and I only ran into one gotcha.</p>
+
+<p>But before the gotcha got me, I needed to find where to add the configuration on my Ubuntu 12.04 server. The dovecot configuration is broken into multiple files in the /etc/dovecot/conf.d/ folder which looks like this on my machine:</p>
+
+<p>{% highlight bash %}
+root@tonks:/etc/dovecot# ls conf.d/
+10-auth.conf      10-master.conf  20-lmtp.conf    auth-deny.conf.ext        auth-system.conf.ext
+10-director.conf  10-ssl.conf     90-acl.conf     auth-master.conf.ext      auth-vpopmail.conf.ext
+10-logging.conf   15-lda.conf     90-plugin.conf  auth-passwdfile.conf.ext
+10-mail.conf      20-imap.conf    90-quota.conf   auth-static.conf.ext
+{% endhighlight %}</p>
+
+<p>This makes it a little hard to guess where a configuration item ought to go, but grep helped out, and I found the mail_plugins and namespace options in <strong>10-mail.conf.</strong> So, following the documentation, I added the virtual plugin to the mail_plugin line, and a namespace stanza for the virtual boxes, like this:</p>
+
+<p>{% highlight bash %}
+namespace {
+  prefix = virtual/
+  separator = /
+  location = virtual:~/mail/virtual
+}
+{% endhighlight %}</p>
+
+<p>A quick reload of dovecot, and things went kaboom. The error was a bit mysterious:</p>
+
+<p>{% highlight bash %}
+Jun  5 08:51:22 tonks dovecot: imap(greg): Error: user greg: Initialization failed: namespace configuration error: inbox=yes namespace missing
+{% endhighlight %}</p>
+
+<p>I <em>added</em> a namespace. Why did that make one go missing? A quick Google search gave me the answer, which also happened to be spelled out clearly in the comments (I didn&rsquo;t read) inside the config file:</p>
+
+<p>{% highlight bash %}</p>
+
+<h1 id="remember-if-you-add-any-namespaces-the-default-namespace-must-be-added">REMEMBER: If you add any namespaces, the default namespace must be added</h1>
+
+<h1 id="explicitly-ie-mail-location-does-nothing-unless-you-have-a-namespace">explicitly, ie. mail_location does nothing unless you have a namespace</h1>
+
+<h1 id="without-a-location-setting-default-namespace-is-simply-done-by-having-a">without a location setting. Default namespace is simply done by having a</h1>
+
+<h1 id="namespace-with-empty-prefix">namespace with empty prefix.</h1>
+
+<p>{% endhighlight %}</p>
+
+<p>Ahah! So I added an explicit &ldquo;root&rdquo; namespace, following the sample:</p>
+
+<p>{% highlight bash %}
+namespace {
+  prefix =
+  type = private
+  inbox = yes
+  separator = /
+  subscriptions = yes
+}
+{% endhighlight %}</p>
+
+<p>After reloading again, all was well. It worked!</p>
+
+<p>Adding virtual mailboxes is extremely easy, and is clearly spelled out in <a href="http://wiki2.dovecot.org/Plugins/Virtual">the documentation</a> on dovecot&rsquo;s wiki, but it boils down to creating a folder under the mapped location specified in your virtual namespace that contains a single file named &ldquo;dovecot-virtual&rdquo;. I won&rsquo;t repeat the docs here, as they are clear enough and have several examples. I set up a folder for one of my mailing lists, and found it populates extremely quickly even on my large mailstore, and is available across all my clients. Hooray!</p>
+
+<p>Next I need to find a way to do the other kind of label, that I manage myself. I&rsquo;ll write something up once I figure that out. Have fun!</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 5 Jun 2013 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:greg@greglincoln.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/tetious" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+  <a href="https://gitlab.com/tetious" target="_blank"><div class="social-link">GitLab</div></a>
+  
+
+  
+  <a href="https://twitter.com/tetious" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+
+  <div class="social-link">
+  <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019 Greg Lincoln, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

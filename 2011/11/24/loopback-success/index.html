@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.59.1" />
+
+<link rel="canonical" href="/2011/11/24/loopback-success/">
+<meta property="og:title" content="Loopback success" />
+<meta property="og:description" content="I had one of those geekpride moments last night when trying to deal with a problem I was having with a Minecraft server running ModLoader. Modding Minecraft is not as easy as it could be, but since it is written in Java, it is not as hard as it could be either. A number of clever folks have built compatibility layers and wrappers to improve mod maintainability and compatibility. ModLoader is one of these wrappers widgets." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/2011/11/24/loopback-success/" />
+<meta property="article:published_time" content="2011-11-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2011-11-24T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Loopback success"/>
+<meta name="twitter:description" content="I had one of those geekpride moments last night when trying to deal with a problem I was having with a Minecraft server running ModLoader. Modding Minecraft is not as easy as it could be, but since it is written in Java, it is not as hard as it could be either. A number of clever folks have built compatibility layers and wrappers to improve mod maintainability and compatibility. ModLoader is one of these wrappers widgets."/>
+
+
+<meta itemprop="name" content="Loopback success">
+<meta itemprop="description" content="I had one of those geekpride moments last night when trying to deal with a problem I was having with a Minecraft server running ModLoader. Modding Minecraft is not as easy as it could be, but since it is written in Java, it is not as hard as it could be either. A number of clever folks have built compatibility layers and wrappers to improve mod maintainability and compatibility. ModLoader is one of these wrappers widgets.">
+
+
+<meta itemprop="datePublished" content="2011-11-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2011-11-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="706">
+
+
+
+<meta itemprop="keywords" content="Admin Geekery,geekery,Linux,Minecraft,Modloader," />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Loopback success 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="/">Greg&#39;s Adventures</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/about/"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:greg@greglincoln.com"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/tetious" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+  <a href="https://gitlab.com/tetious" target="_blank"><div class="social-link">gl</div></a>
+  
+
+  
+  <a href="https://twitter.com/tetious" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Loopback success </h1>
+    <div class="content"> <p>I had one of those geekpride moments last night when trying to deal with a problem I was having with a Minecraft server running ModLoader. Modding Minecraft is not as easy as it could be, but since it is written in Java, it is not as hard as it could be either. A number of clever folks have built compatibility layers and wrappers to improve mod maintainability and compatibility. ModLoader is one of these wrappers widgets.</p>
+
+<p>Its developer recently (well, somewhat recently anyway) added a feature that would merge zipped jar like class collections from a mods subdirectory into the classpath, preventing the need to edit minecraft_server.jar for each and every mod as you had to do in the past. It loads these in &ldquo;random&rdquo; order, which turns out to be alphabetical on some platforms, and in less easily manipulated order on others. Linux falls into the latter category, naturally.</p>
+
+<p>When I looked to fix this, my first thought was to change ModLoader&rsquo;s behavior so that it always loaded in alphabetical order. This would be trivial to do if I had the source for ModLoader, but less so without it. I don&rsquo;t have much experience with Java decompilers and just didn&rsquo;t feel like messing with that.</p>
+
+<p>Instead, I implemented a fun easy hack that anyone running Linux can do. I created a small vfat loopback filesystem for the mods subfolder. This produced the expected alphabetical loading order and took a minute or two to set up. Here&rsquo;s how you do it:</p>
+
+<p>First, create a zeroed out virtual &ldquo;disk&rdquo; file to mount, using dd.</p>
+
+<p>{% highlight bash %}
+dd if=/dev/zero of=diskimage.100mb bs=1048576 count=100
+{% endhighlight %}</p>
+
+<p>dd stands for data description, but you don&rsquo;t really need to know that. It looks more complicated than it is. The if and of parameters are &ldquo;in file&rdquo; and &ldquo;out file.&rdquo; Since we want a file filled with zeroes, we use /dev/zero (a convenience &rdquo;device&rdquo; that returns zero) as the &ldquo;in file.&rdquo; Next, we have bs, for which the snarky among you will instantly have a definition in mind. However! It is actually &ldquo;block size,&rdquo; and determines the size of each copy block, or step in bytes. As I wanted a file that was roughly 100MB, I used the size of a megabyte here. Lastly, we have count, which simply determines the number of &ldquo;bs&rdquo; blocks to write. (Yes, yes, BS blocks)</p>
+
+<p>Now! We have a nice empty file to use. Let&rsquo;s format it. This is super easy.</p>
+
+<p>{% highlight bash %}
+mkfs.vfat diskimage.100mb
+{% endhighlight %}</p>
+
+<p>We use vfat because it is fast, simple, and Windowsy. Also, it worked.</p>
+
+<p>Last step! We need to mount it. In Linux, there are no pesky drive letters. One can mount a filesystem anywhere. Everything lives as a child of root, which is simply /. So let us assume our Minecraft server lives in /home/minecraft. The mods folder needs to be /home/minecraft/mods. So create the empty folder first. (Move your existing mods folder out of the way if needed.)</p>
+
+<p>{% highlight bash %}
+mv mods mods-old (if needed)
+mkdir mods
+{% endhighlight %}</p>
+
+<p>And the mount: (You need to be able to run things as sudo/root to do this. Discussions about sudo are outside of the scope of this article.)</p>
+
+<p>{% highlight bash %}
+sudo mount diskimage.100mb /home/minecraft/mods -t vfat -o loop,owner,group,umask=000
+{% endhighlight %}</p>
+
+<p>The gist of this is probably obvious. The flags tell mount the type of the filesystem and to map all the files as 777 (readable and writeable by all) since vfat does not support these things natively. It&rsquo;s fine for our needs, though not secure enough for some other situations, such as a folder accessible via the web, so make sure you understand the implications of this before you use it elsewhere.</p>
+
+<p>Now, you are set! You can copy your mod zip files and rename them so that they are in the order you&rsquo;d like and it will Just Work&trade;. Hooray!</p>
+
+<p>One last thing. If you want this to mount automatically, you will need to edit /etc/fstab, adding this: (all on one line)</p>
+
+<p>{% highlight bash %}
+/home/minecraft/diskimage.100mb /home/minecraft/mods vfat loop,owner,group,umask=000 0 0
+{% endhighlight %}</p>
+
+<p>I&rsquo;ll leave the details of this to you to read about. Have fun!</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+      <div class="tag">
+        <a href="/tags/admin-geekery">#Admin Geekery</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/geekery">#geekery</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/linux">#Linux</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/minecraft">#Minecraft</a>
+      </div>
+    
+      <div class="tag">
+        <a href="/tags/modloader">#Modloader</a>
+      </div>
+    
+</div>
+
+    <div class="date"> 24 Nov 2011 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:greg@greglincoln.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/tetious" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+  <a href="https://gitlab.com/tetious" target="_blank"><div class="social-link">GitLab</div></a>
+  
+
+  
+  <a href="https://twitter.com/tetious" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+
+  <div class="social-link">
+  <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019 Greg Lincoln, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

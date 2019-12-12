@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Announcements on Greg&#39;s Adventures</title>
+    <link>/tags/announcements/</link>
+    <description>Recent content in Announcements on Greg&#39;s Adventures</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright (c) 2019 Greg Lincoln, all rights reserved.</copyright>
+    <lastBuildDate>Thu, 21 Feb 2008 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/announcements/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Posting...</title>
+      <link>/2008/02/21/posting/</link>
+      <pubDate>Thu, 21 Feb 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/2008/02/21/posting/</guid>
+      <description>Rab is making me start posting regularly. Rather, he had one of his blog secretaries inform me I would be posting regularly. He has secretaries to do his typing, and he doesn&amp;rsquo;t even post regularly!</description>
+    </item>
+    
+    <item>
+      <title>New site!</title>
+      <link>/2007/02/14/new-site/</link>
+      <pubDate>Wed, 14 Feb 2007 00:00:00 +0000</pubDate>
+      
+      <guid>/2007/02/14/new-site/</guid>
+      <description>Isn&amp;rsquo;t is nifty? After a dozen years, I&amp;rsquo;ve finally updated my personal site to something more modern. Maybe I&amp;rsquo;ll even keep this blog up! That would amaze and astonish.</description>
+    </item>
+    
+  </channel>
+</rss>

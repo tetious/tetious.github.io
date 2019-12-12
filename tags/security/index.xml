@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on Greg&#39;s Adventures</title>
+    <link>/tags/security/</link>
+    <description>Recent content in Security on Greg&#39;s Adventures</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright (c) 2019 Greg Lincoln, all rights reserved.</copyright>
+    <lastBuildDate>Fri, 22 Jul 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android is Insecure By Design</title>
+      <link>/2011/07/22/android-is-insecure-by-design/</link>
+      <pubDate>Fri, 22 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/2011/07/22/android-is-insecure-by-design/</guid>
+      <description>Android&amp;rsquo;s security situation is pretty dire. Considering how well Google architected Chrome, I know they understand how to create a secure system. Perhaps Google don&amp;rsquo;t care about security on Android? If a user needs to worry about downloading malware on Android Market, which has apps that leak or maliciously steal personal data, and others that send spam SMS messages, among other nasty things, something has gone terribly wrong. Asking users to review a complex and obtuse permissions list is not even close to the answer.</description>
+    </item>
+    
+  </channel>
+</rss>

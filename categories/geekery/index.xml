@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>geekery on Greg&#39;s Adventures</title>
+    <link>/categories/geekery/</link>
+    <description>Recent content in geekery on Greg&#39;s Adventures</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright (c) 2019 Greg Lincoln, all rights reserved.</copyright>
+    <lastBuildDate>Sat, 08 Jun 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/geekery/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ubuntu Keyring Gotcha</title>
+      <link>/2013/06/08/ubuntu-keyring-gotcha/</link>
+      <pubDate>Sat, 08 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/2013/06/08/ubuntu-keyring-gotcha/</guid>
+      <description>One nice feature you get for free with OSX is an automatic handy ssh keyring thingie that loads in all your private keys and optionally saves their passphrases to the native keychain app. This native keychain application has highly customizable security options that, when configured properly, make it difficult (impossible?) for someone without your account credentials to use your private key without providing the passphase, while still allowing for a &amp;ldquo;single sign on&amp;rdquo; experience of happiness.</description>
+    </item>
+    
+    <item>
+      <title>Dovecot Virtuals are Spiffy!</title>
+      <link>/2013/06/05/dovecot-virtuals-are-spiffy/</link>
+      <pubDate>Wed, 05 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/2013/06/05/dovecot-virtuals-are-spiffy/</guid>
+      <description>One of my goals with the new server was to learn as much as possible. In that light, I decided I would use as many new (to me) bits of server software as I could. I will do a write up soon on the whole setup, but for now I want to talk briefly about Dovecot&amp;rsquo;s virtual plugin. (Dovecot is the IMAP server I selected for my setup.)
+As a gmail convert, I&amp;rsquo;ve been trying to find ways to replicate the bits of the &amp;ldquo;gmail experience&amp;rdquo; that I liked.</description>
+    </item>
+    
+    <item>
+      <title>Loopback success</title>
+      <link>/2011/11/24/loopback-success/</link>
+      <pubDate>Thu, 24 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/2011/11/24/loopback-success/</guid>
+      <description>I had one of those geekpride moments last night when trying to deal with a problem I was having with a Minecraft server running ModLoader. Modding Minecraft is not as easy as it could be, but since it is written in Java, it is not as hard as it could be either. A number of clever folks have built compatibility layers and wrappers to improve mod maintainability and compatibility. ModLoader is one of these wrappers widgets.</description>
+    </item>
+    
+  </channel>
+</rss>

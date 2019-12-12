@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Greg&#39;s Adventures</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Greg&#39;s Adventures</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright (c) 2019 Greg Lincoln, all rights reserved.</copyright>
+    <lastBuildDate>Thu, 24 Nov 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Admin Geekery</title>
+      <link>/tags/admin-geekery/</link>
+      <pubDate>Thu, 24 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/admin-geekery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>geekery</title>
+      <link>/tags/geekery/</link>
+      <pubDate>Thu, 24 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/geekery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Thu, 24 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Minecraft</title>
+      <link>/tags/minecraft/</link>
+      <pubDate>Thu, 24 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/minecraft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modloader</title>
+      <link>/tags/modloader/</link>
+      <pubDate>Thu, 24 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/modloader/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>/tags/security/</link>
+      <pubDate>Fri, 22 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Experiments</title>
+      <link>/tags/experiments/</link>
+      <pubDate>Sun, 04 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/experiments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Writing</title>
+      <link>/tags/writing/</link>
+      <pubDate>Mon, 23 Nov 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/writing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>/tags/programming/</link>
+      <pubDate>Mon, 23 Jun 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Add new tag</title>
+      <link>/tags/add-new-tag/</link>
+      <pubDate>Thu, 10 Apr 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/add-new-tag/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>process</title>
+      <link>/tags/process/</link>
+      <pubDate>Thu, 10 Apr 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/process/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ramble</title>
+      <link>/tags/ramble/</link>
+      <pubDate>Thu, 10 Apr 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ramble/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Announcements</title>
+      <link>/tags/announcements/</link>
+      <pubDate>Thu, 21 Feb 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/announcements/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Personal Growth</title>
+      <link>/tags/personal-growth/</link>
+      <pubDate>Sat, 17 Feb 2007 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/personal-growth/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>/tags/python/</link>
+      <pubDate>Sat, 17 Feb 2007 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

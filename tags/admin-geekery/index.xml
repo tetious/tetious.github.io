@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Admin Geekery on Greg&#39;s Adventures</title>
+    <link>/tags/admin-geekery/</link>
+    <description>Recent content in Admin Geekery on Greg&#39;s Adventures</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright (c) 2019 Greg Lincoln, all rights reserved.</copyright>
+    <lastBuildDate>Thu, 24 Nov 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/admin-geekery/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Loopback success</title>
+      <link>/2011/11/24/loopback-success/</link>
+      <pubDate>Thu, 24 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/2011/11/24/loopback-success/</guid>
+      <description>I had one of those geekpride moments last night when trying to deal with a problem I was having with a Minecraft server running ModLoader. Modding Minecraft is not as easy as it could be, but since it is written in Java, it is not as hard as it could be either. A number of clever folks have built compatibility layers and wrappers to improve mod maintainability and compatibility. ModLoader is one of these wrappers widgets.</description>
+    </item>
+    
+    <item>
+      <title>phpBB3 and add user mod</title>
+      <link>/2011/07/15/phpbb3-and-add-user-mod/</link>
+      <pubDate>Fri, 15 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/2011/07/15/phpbb3-and-add-user-mod/</guid>
+      <description>If you use the add user mod with phpBB3 with new user registration disabled you may find it is not sending passwords in the user welcome email. To fix this, you&amp;rsquo;ll need to edit the language template for the user welcome email to include the password token.
+You can find the tempate in language/en/emails. WIth user registration disabled, the one you want is user_welcome.txt. Use _inactive.txt or admin_welcome_inactive.txt as appropriate if you use those registration modes.</description>
+    </item>
+    
+  </channel>
+</rss>

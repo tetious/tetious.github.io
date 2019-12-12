@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on Greg&#39;s Adventures</title>
+    <link>/categories/blog/</link>
+    <description>Recent content in blog on Greg&#39;s Adventures</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright (c) 2019 Greg Lincoln, all rights reserved.</copyright>
+    <lastBuildDate>Sun, 02 Jun 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>/2013/06/02/jekyll-or-hyde/</link>
+      <pubDate>Sun, 02 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/2013/06/02/jekyll-or-hyde/</guid>
+      <description>So this blog is now based on Jekyll. The migration was&amp;hellip;okay, I guess. I had to roll my own ruby script to do some massaging of the output of the wordpress converter, and I&amp;rsquo;m still missing a ton of features that I&amp;rsquo;d like to have back. But we&amp;rsquo;ll see if I get around to that, or not. Heh.</description>
+    </item>
+    
+  </channel>
+</rss>

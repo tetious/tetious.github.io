@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Modloader on Greg&#39;s Adventures</title>
+    <link>/tags/modloader/</link>
+    <description>Recent content in Modloader on Greg&#39;s Adventures</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright (c) 2019 Greg Lincoln, all rights reserved.</copyright>
+    <lastBuildDate>Thu, 24 Nov 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/modloader/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Loopback success</title>
+      <link>/2011/11/24/loopback-success/</link>
+      <pubDate>Thu, 24 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/2011/11/24/loopback-success/</guid>
+      <description>I had one of those geekpride moments last night when trying to deal with a problem I was having with a Minecraft server running ModLoader. Modding Minecraft is not as easy as it could be, but since it is written in Java, it is not as hard as it could be either. A number of clever folks have built compatibility layers and wrappers to improve mod maintainability and compatibility. ModLoader is one of these wrappers widgets.</description>
+    </item>
+    
+  </channel>
+</rss>

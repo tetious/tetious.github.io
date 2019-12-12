@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Greg&#39;s Adventures</title>
+    <link>/</link>
+    <description>Recent content on Greg&#39;s Adventures</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright (c) 2019 Greg Lincoln, all rights reserved.</copyright>
+    <lastBuildDate>Thu, 12 Dec 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Thu, 12 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description> I&amp;rsquo;m a software engineer type. I do nerdly things, and create nerdly stuff. </description>
+    </item>
+    
+    <item>
+      <title>Contextual Electronics.</title>
+      <link>/2016/07/31/contextual-electronics/</link>
+      <pubDate>Sun, 31 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/2016/07/31/contextual-electronics/</guid>
+      <description>I&amp;rsquo;m certainly not going to run out of things to learn about electronics. Anytime I start exploring something new, it leads to a bunch of combined feelings that mix up into a frothing mass. Excitement at gaining better understanding, and the general love of learning. Distress wondering if some things are ever going to make sense, or if I lack the fundamental bits I need to figure them out. (like Hard Math&amp;trade;) Sleepiness, from too many late nights fiddling.</description>
+    </item>
+    
+    <item>
+      <title>Debugging Success!</title>
+      <link>/2016/07/24/debugging-success/</link>
+      <pubDate>Sun, 24 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/2016/07/24/debugging-success/</guid>
+      <description>Yesterday I mentioned I wasn&amp;rsquo;t able to get debugging going with JTAG and my STM32 dev board. I puzzled it out today, and it was a definite PEBKAC. Alas. In the hopes that it may help someone, I&amp;rsquo;ll share my results here.
+The key is a &amp;ldquo;make it work&amp;rdquo; setting within CubeMX. By default, the JTAG pins are not configured! This is probably obvious to folks used to working with this platform.</description>
+    </item>
+    
+    <item>
+      <title>Cheap STM32 dev board fiddlings.</title>
+      <link>/2016/07/23/cheap-stm32-dev-board-fiddlings/</link>
+      <pubDate>Sat, 23 Jul 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/2016/07/23/cheap-stm32-dev-board-fiddlings/</guid>
+      <description>The Prelude The STM32 has garnered some attention lately as a possible successor/upgrade for the limited AVR microcontrollers that most Arduinos use. I&amp;rsquo;m not sure why it has captured the spotlight away from other interesting options, such as the Freescale part used in the Teensy. Perhaps that&amp;rsquo;s only my perception. There is certainly room enough for multiple nifty alternatives.
+As is common, the place to go for cheap and cheerful if slightly dodgy electronical goodness is Banggood.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu Keyring Gotcha</title>
+      <link>/2013/06/08/ubuntu-keyring-gotcha/</link>
+      <pubDate>Sat, 08 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/2013/06/08/ubuntu-keyring-gotcha/</guid>
+      <description>One nice feature you get for free with OSX is an automatic handy ssh keyring thingie that loads in all your private keys and optionally saves their passphrases to the native keychain app. This native keychain application has highly customizable security options that, when configured properly, make it difficult (impossible?) for someone without your account credentials to use your private key without providing the passphase, while still allowing for a &amp;ldquo;single sign on&amp;rdquo; experience of happiness.</description>
+    </item>
+    
+    <item>
+      <title>Dovecot Virtuals are Spiffy!</title>
+      <link>/2013/06/05/dovecot-virtuals-are-spiffy/</link>
+      <pubDate>Wed, 05 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/2013/06/05/dovecot-virtuals-are-spiffy/</guid>
+      <description>One of my goals with the new server was to learn as much as possible. In that light, I decided I would use as many new (to me) bits of server software as I could. I will do a write up soon on the whole setup, but for now I want to talk briefly about Dovecot&amp;rsquo;s virtual plugin. (Dovecot is the IMAP server I selected for my setup.)
+As a gmail convert, I&amp;rsquo;ve been trying to find ways to replicate the bits of the &amp;ldquo;gmail experience&amp;rdquo; that I liked.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/2013/06/02/jekyll-or-hyde/</link>
+      <pubDate>Sun, 02 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>/2013/06/02/jekyll-or-hyde/</guid>
+      <description>So this blog is now based on Jekyll. The migration was&amp;hellip;okay, I guess. I had to roll my own ruby script to do some massaging of the output of the wordpress converter, and I&amp;rsquo;m still missing a ton of features that I&amp;rsquo;d like to have back. But we&amp;rsquo;ll see if I get around to that, or not. Heh.</description>
+    </item>
+    
+    <item>
+      <title>Loopback success</title>
+      <link>/2011/11/24/loopback-success/</link>
+      <pubDate>Thu, 24 Nov 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/2011/11/24/loopback-success/</guid>
+      <description>I had one of those geekpride moments last night when trying to deal with a problem I was having with a Minecraft server running ModLoader. Modding Minecraft is not as easy as it could be, but since it is written in Java, it is not as hard as it could be either. A number of clever folks have built compatibility layers and wrappers to improve mod maintainability and compatibility. ModLoader is one of these wrappers widgets.</description>
+    </item>
+    
+    <item>
+      <title>Android is Insecure By Design</title>
+      <link>/2011/07/22/android-is-insecure-by-design/</link>
+      <pubDate>Fri, 22 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/2011/07/22/android-is-insecure-by-design/</guid>
+      <description>Android&amp;rsquo;s security situation is pretty dire. Considering how well Google architected Chrome, I know they understand how to create a secure system. Perhaps Google don&amp;rsquo;t care about security on Android? If a user needs to worry about downloading malware on Android Market, which has apps that leak or maliciously steal personal data, and others that send spam SMS messages, among other nasty things, something has gone terribly wrong. Asking users to review a complex and obtuse permissions list is not even close to the answer.</description>
+    </item>
+    
+    <item>
+      <title>phpBB3 and add user mod</title>
+      <link>/2011/07/15/phpbb3-and-add-user-mod/</link>
+      <pubDate>Fri, 15 Jul 2011 00:00:00 +0000</pubDate>
+      
+      <guid>/2011/07/15/phpbb3-and-add-user-mod/</guid>
+      <description>If you use the add user mod with phpBB3 with new user registration disabled you may find it is not sending passwords in the user welcome email. To fix this, you&amp;rsquo;ll need to edit the language template for the user welcome email to include the password token.
+You can find the tempate in language/en/emails. WIth user registration disabled, the one you want is user_welcome.txt. Use _inactive.txt or admin_welcome_inactive.txt as appropriate if you use those registration modes.</description>
+    </item>
+    
+    <item>
+      <title>iPad?</title>
+      <link>/2010/04/04/ipad/</link>
+      <pubDate>Sun, 04 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>/2010/04/04/ipad/</guid>
+      <description>So far, this thing has not left my side. I can almost touch type with this keyboard. What I hadn&amp;rsquo;t expected was for it to replace my iPhone in my mind such that I am puzzled by the tiny screen when I use my iPhone. I think this means Iphones need a higher res screen.</description>
+    </item>
+    
+    <item>
+      <title>My box can has shinies!</title>
+      <link>/2009/11/23/my-box-can-has-shinies/</link>
+      <pubDate>Mon, 23 Nov 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/2009/11/23/my-box-can-has-shinies/</guid>
+      <description>Found on a forum:
+ I think of my inner world like a child holding a box of their most precious treasures and when they show it to someone the person laughs and teases that that they aren&amp;rsquo;t treasures, they are worthless knickknacks and stones. What hurts isn&amp;rsquo;t being told that they are worthless, what hurts is that something so wonderful could not be shared. What doesn&amp;rsquo;t do any good is locking the box up and showing no one ever again.</description>
+    </item>
+    
+    <item>
+      <title>You must watch this right away.</title>
+      <link>/2008/07/17/you-must-watch-this-right-away/</link>
+      <pubDate>Thu, 17 Jul 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/2008/07/17/you-must-watch-this-right-away/</guid>
+      <description>Really. Dr. Horrible&amp;rsquo;s Sing-Along Blog
+Awesome. Watch now. Thanks.</description>
+    </item>
+    
+    <item>
+      <title>Reverse a dictionary</title>
+      <link>/2008/06/23/reverse-a-dictionary/</link>
+      <pubDate>Mon, 23 Jun 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/2008/06/23/reverse-a-dictionary/</guid>
+      <description>Have you ever wished your dictionary of &amp;lt;K,V&amp;gt; was in fact of &amp;lt;V,K&amp;gt;? I might be the last person to figure this out, but with LINQ (and a couple lambdas) you can do this with one magical line of code:
+var newDict = oldDict.ToDictionary(l =&amp;gt; l.Value, l =&amp;gt; l.Key);  Neat, eh?</description>
+    </item>
+    
+    <item>
+      <title>I hate Subversion</title>
+      <link>/2008/06/22/i-hate-subversion/</link>
+      <pubDate>Sun, 22 Jun 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/2008/06/22/i-hate-subversion/</guid>
+      <description>I really really hate it. Every time I try to do anything USEFUL with it, like try out an idea in a new branch and then merge the bits of that branch that worked out back to my main line, it barfs all over me with totally crap-ass error messages that nobody could ever, EVER understand.
+Also, despite their claims to the contrary in the documentation, svn will happily shit all over your working copy when a switch fails.</description>
+    </item>
+    
+    <item>
+      <title>Become a Jedi with Resharper</title>
+      <link>/2008/06/20/become-a-jedi-with-resharper/</link>
+      <pubDate>Fri, 20 Jun 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/2008/06/20/become-a-jedi-with-resharper/</guid>
+      <description>If you work in C# or VB.net on a regular basis, you really owe it to yourself to try out Resharper. This tool saves me countless hours.
+James Kovacs put together some fantastic screencasts on &amp;ldquo; Becoming a Jedi&amp;rdquo; that show it in action, if you are curious.
+He hasn&amp;rsquo;t covered the features that make it a boon for test driven development yet, but there&amp;rsquo;s another great screencast that shows that off, and this post provides some additional details on &amp;ldquo;coding in reverse&amp;rdquo; with Resharper.</description>
+    </item>
+    
+    <item>
+      <title>Order of operations</title>
+      <link>/2008/06/19/order-of-operations/</link>
+      <pubDate>Thu, 19 Jun 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/2008/06/19/order-of-operations/</guid>
+      <description>Sometimes I can be such a buffoon. When programming with threads, one must be sure to lock and unlock in the correct order. Also, one must be sure not to do things explicitly marked as no-nos while in a &amp;ldquo;critical section.&amp;rdquo;
+I just lost two hours to this, so I felt the need to whine.</description>
+    </item>
+    
+    <item>
+      <title>Fictional Writings</title>
+      <link>/2008/04/10/fictional-writings/</link>
+      <pubDate>Thu, 10 Apr 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/2008/04/10/fictional-writings/</guid>
+      <description>And I mean writing that doesn&amp;rsquo;t exist, not writing about things that don&amp;rsquo;t exist.
+So I&amp;rsquo;m working on what feels like a novel, perhaps of slightly shorter than what would be considered a big book, but not so short as to not fall into the novel category. It also seems to want to be a young adult book, through it wasn&amp;rsquo;t one when it was still rattling around in the cobwebs of my lack-of-brain.</description>
+    </item>
+    
+    <item>
+      <title>Posting...</title>
+      <link>/2008/02/21/posting/</link>
+      <pubDate>Thu, 21 Feb 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/2008/02/21/posting/</guid>
+      <description>Rab is making me start posting regularly. Rather, he had one of his blog secretaries inform me I would be posting regularly. He has secretaries to do his typing, and he doesn&amp;rsquo;t even post regularly!</description>
+    </item>
+    
+    <item>
+      <title>On programming for fun.</title>
+      <link>/2007/02/17/on-programming-for-fun/</link>
+      <pubDate>Sat, 17 Feb 2007 00:00:00 +0000</pubDate>
+      
+      <guid>/2007/02/17/on-programming-for-fun/</guid>
+      <description>I wonder if it is the nature of the beast that when someone does something for a living day in and day out, it stops being fun. I&amp;rsquo;m starting to worry that may be the case with me.
+Why am I bringing this up? One reason is due to watching my friend Rab having fun with Python. He&amp;rsquo;s having fun. He&amp;rsquo;s doing it for fun, and thus he&amp;rsquo;s having fun. Doesn&amp;rsquo;t that sound like fun?</description>
+    </item>
+    
+    <item>
+      <title>New site!</title>
+      <link>/2007/02/14/new-site/</link>
+      <pubDate>Wed, 14 Feb 2007 00:00:00 +0000</pubDate>
+      
+      <guid>/2007/02/14/new-site/</guid>
+      <description>Isn&amp;rsquo;t is nifty? After a dozen years, I&amp;rsquo;ve finally updated my personal site to something more modern. Maybe I&amp;rsquo;ll even keep this blog up! That would amaze and astonish.</description>
+    </item>
+    
+    <item>
+      <title>Patch, patch, patch!</title>
+      <link>/2006/10/11/patch-patch-patch/</link>
+      <pubDate>Wed, 11 Oct 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/10/11/patch-patch-patch/</guid>
+      <description>Microsoft has released a record number of patches many of which are of the most critical variety. Please, please, please! Update your system(s) now! Don&amp;rsquo;t get bitten.</description>
+    </item>
+    
+    <item>
+      <title>Fall is here!</title>
+      <link>/2006/10/09/fall-is-here/</link>
+      <pubDate>Mon, 09 Oct 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/10/09/fall-is-here/</guid>
+      <description>When I walked out of the garage this morning, and felt the cool, dry air around me, I knew that fall was finally here. The sun was just coming up, and everything around me was still and quiet. Mornings like this make me want to spend the whole day outside. The quiet makes me remember how blessed I am to no longer live in a miserable apartment in the city.</description>
+    </item>
+    
+    <item>
+      <title>Influence the Universe</title>
+      <link>/2006/10/06/influence-the-universe/</link>
+      <pubDate>Fri, 06 Oct 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/10/06/influence-the-universe/</guid>
+      <description>In an attempt to alter our reality, we&amp;rsquo;ve taken to writing the opposite of habitual computer problems on the whiteboard in my office. It is our hope that, through the power of positive thinking, we&amp;rsquo;ll make them come true.</description>
+    </item>
+    
+    <item>
+      <title>Egad</title>
+      <link>/2006/10/04/egad/</link>
+      <pubDate>Wed, 04 Oct 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/10/04/egad/</guid>
+      <description>The paper shredders are here today, and they park their truck right outside my office window. Now, I don&amp;rsquo;t mind that they&amp;rsquo;ve parked their truck in a way that obscures my view nearly as much as I mind the rumble and noise that accompanies said truck. Woe is me.</description>
+    </item>
+    
+    <item>
+      <title>rsync.net</title>
+      <link>/2006/10/02/rsyncnet/</link>
+      <pubDate>Mon, 02 Oct 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/10/02/rsyncnet/</guid>
+      <description>We needed offsite backup at the dayjob, and after some research, I went with rsync.net. Their support is above and beyond what I expected. I had a small problem with their payment form, and they responded very quickly to my email and even set up the account anyway while they worked on the payment issue. These guys get it and are great to work with. They also provide very easy and secure access in several ways including ssh,ftp and dav.</description>
+    </item>
+    
+    <item>
+      <title>King Billswag the Mighty</title>
+      <link>/2006/09/29/king-billswag-the-mighty/</link>
+      <pubDate>Fri, 29 Sep 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/09/29/king-billswag-the-mighty/</guid>
+      <description>I&amp;rsquo;ve noticed that I&amp;rsquo;m becoming much more critical of writing. In the last few years, books that I thought were brilliantly written have lost some of their lustre and are now only mediocre. Books I&amp;rsquo;d loved and re-read dozens of times are now nearly unreadable. I used to like almost everything I read. Now, I find some books embarrassingly bad, and just can&amp;rsquo;t finish them. I&amp;rsquo;m not sure if I&amp;rsquo;m getting a better grip on what makes writing good, or if I&amp;rsquo;m just becoming grumpy and cynical.</description>
+    </item>
+    
+    <item>
+      <title>VML patch out</title>
+      <link>/2006/09/27/vml-patch-out/</link>
+      <pubDate>Wed, 27 Sep 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/09/27/vml-patch-out/</guid>
+      <description>Get the VML patch at WIndows/Microsoft update now. Don&amp;rsquo;t wait. Do it now. (NOTE: if you unregistered vgx.dll, be sure to register it again before applying the patch.)</description>
+    </item>
+    
+    <item>
+      <title>IE vulnerability</title>
+      <link>/2006/09/26/ie-vulnerability/</link>
+      <pubDate>Tue, 26 Sep 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/09/26/ie-vulnerability/</guid>
+      <description>The bug is old news, but folks have started to actively exploit it. http://secunia.com/advisories/21989 You really should unregister that DLL or switch to Opera or Firefox. Or just get a Mac. :) It isn&amp;rsquo;t panic time yet, but this could get really nasty.</description>
+    </item>
+    
+    <item>
+      <title>Long day</title>
+      <link>/2006/09/26/long-day/</link>
+      <pubDate>Tue, 26 Sep 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/09/26/long-day/</guid>
+      <description>Monday. Oh, how I hate thee. Rotten to the crunchy center art thou. For some reason, I feel like I didn&amp;rsquo;t get any sleep last night. I know I did though. I even had some bizarre dreams. I don&amp;rsquo;t usually get those on weekdays. My theory is that I don&amp;rsquo;t sleep long enough to allow REM sleep on weekdays. My subconscious refuses to be ignored even in those cases. I get all the wacky dreams come the weekend.</description>
+    </item>
+    
+    <item>
+      <title>wow</title>
+      <link>/2006/09/26/wow/</link>
+      <pubDate>Tue, 26 Sep 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/09/26/wow/</guid>
+      <description>For some reason, I&amp;rsquo;ve been feeling the urge to give World of Warcraft another try. As I still have the game installed on the Windows PC, it tempts me from time to time.
+I&amp;rsquo;ve quit twice after playing a short time each instance. I just couldn&amp;rsquo;t get into it. But with Jerry Pournelle mentioning it all the time, and that damned icon on the gaming machine, it is just so tempting.</description>
+    </item>
+    
+    <item>
+      <title>Birthday</title>
+      <link>/2006/09/24/birthday/</link>
+      <pubDate>Sun, 24 Sep 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/09/24/birthday/</guid>
+      <description>So tomorrow I&amp;rsquo;ll be 28. I&amp;rsquo;ve been out of school and in the workforce for TEN YEARS. When I was young, I was told to expect time to go faster as I aged. I couldn&amp;rsquo;t believe it was possible. A month was a very long time. A year, nearly forever. A decade? Unfathomable. And here my folks were telling me that a year would be nothing when I was &amp;ldquo;their age.</description>
+    </item>
+    
+    <item>
+      <title>Lineage 2 Music</title>
+      <link>/2006/09/24/lineage-2-music/</link>
+      <pubDate>Sun, 24 Sep 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/09/24/lineage-2-music/</guid>
+      <description>Geez, I love this music. One of these days I really ought to try the game. ;) (Well okay, I tried the beta, and it wasn&amp;rsquo;t all that much fun.) EDIT: If you are interested, there are very high quality samples on Bill Brown&amp;rsquo;s website. If you have any love for orchestral game music, you really must hear this.</description>
+    </item>
+    
+    <item>
+      <title>Jericho</title>
+      <link>/2006/09/22/jericho/</link>
+      <pubDate>Fri, 22 Sep 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/09/22/jericho/</guid>
+      <description>I&amp;rsquo;m always game for a good serial, and I had high hopes for Jericho. The previews looked pretty good, and the premise was intriguing and looked as though it would make for a good developing plot arc thingie. Alas, it was crap. The writing was soapy and featured truly horrendous dialog, littered with cliches and stupid moments. The acting was embarrassingly bad, particularly the supporting roles. But the worst aspect was definitely the music.</description>
+    </item>
+    
+    <item>
+      <title>ugg</title>
+      <link>/2006/09/21/ugg/</link>
+      <pubDate>Thu, 21 Sep 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/09/21/ugg/</guid>
+      <description>Crazy day so far, including a nice whack on the head while replacing a UPS battery at o-way-too-early. At least nearly everything worked after replacing the battery. Except the tape drive in the big important SQL server. Rebooting seems to have helped, for now. I hate to see anything backup related become unreliable.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/2006/09/20/80/</link>
+      <pubDate>Wed, 20 Sep 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/09/20/80/</guid>
+      <description>By the by, I finished Spin last night. It had a great ending. You gotta gotta read it.</description>
+    </item>
+    
+    <item>
+      <title>Still booming</title>
+      <link>/2006/09/20/still-booming/</link>
+      <pubDate>Wed, 20 Sep 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/09/20/still-booming/</guid>
+      <description>I woke up to yet more thunder and rain this morning. I love storms, but now that I live in the outskirts of nearly nowhere, they provide a totally different experience. The most noticeable difference is the sheer power and ferocity as compared to the storms in the city. We get so many near lightning hits, and the thunder following would be perfect to usher in the end of the world.</description>
+    </item>
+    
+    <item>
+      <title>Thunder</title>
+      <link>/2006/09/20/thunder/</link>
+      <pubDate>Wed, 20 Sep 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/09/20/thunder/</guid>
+      <description>The thunder tonight is unnerving. Perhaps it is partly due to the scary music I have on, and the fact that I keep my house dark. But damn, I&amp;rsquo;m getting loooong extended thunder booms with sudden concussive blasts interspersed that sound like they are going to push all the windows in on me. There was just one that went for almost thirty seconds. Yipes.</description>
+    </item>
+    
+    <item>
+      <title>Back?</title>
+      <link>/2006/09/19/back/</link>
+      <pubDate>Tue, 19 Sep 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/09/19/back/</guid>
+      <description>Wow. January of last year was when I last made a substantive post here. I&amp;rsquo;ve been trying to figure out how to transition back into posting, and that process has led to more procrastinating, and still no post. I&amp;rsquo;d better just post and be done with it, I guess. Much has happened. I could be dramatic and call this last almost-year life changing. It wouldn&amp;rsquo;t be that much of an exaggeration, really.</description>
+    </item>
+    
+    <item>
+      <title>Crap voting machines</title>
+      <link>/2006/09/19/crap-voting-machines/</link>
+      <pubDate>Tue, 19 Sep 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/09/19/crap-voting-machines/</guid>
+      <description>If you haven&amp;rsquo;t seen this video, you really must watch it now. This isn&amp;rsquo;t new information. Dr. Felten and others have been talking about this for some time now. This video makes it even harder for anyone to ignore.</description>
+    </item>
+    
+    <item>
+      <title>On iTunes and iPod</title>
+      <link>/2006/09/19/on-itunes-and-ipod/</link>
+      <pubDate>Tue, 19 Sep 2006 00:00:00 +0000</pubDate>
+      
+      <guid>/2006/09/19/on-itunes-and-ipod/</guid>
+      <description>I sent the comments below to Bob Thompson in response to his post today. I&amp;rsquo;m not sure I see how iPod sales are tanking in a big way: http://en.wikipedia.org/wiki/Image:IPod_sales_quarterly.png If you remove the huge Christmas bump, they have still been selling more per quarter than last year. As far as iTunes, from what I&amp;rsquo;ve read it seems to be doing very well too. In fact, they are now the 5th largest reseller of music in the US.</description>
+    </item>
+    
+    <item>
+      <title>Another Birthday!</title>
+      <link>/2005/02/01/another-birthday/</link>
+      <pubDate>Tue, 01 Feb 2005 00:00:00 +0000</pubDate>
+      
+      <guid>/2005/02/01/another-birthday/</guid>
+      <description>Happy Birthday ! I hope you have a splendiferously splendid day.</description>
+    </item>
+    
+    <item>
+      <title>Happy Birthday!</title>
+      <link>/2005/01/29/happy-birthday/</link>
+      <pubDate>Sat, 29 Jan 2005 00:00:00 +0000</pubDate>
+      
+      <guid>/2005/01/29/happy-birthday/</guid>
+      <description>Happy Birthday ! I hope you have a mega great, uber fantastic, ultra happy, lame adjective free day!</description>
+    </item>
+    
+    <item>
+      <title>Katamari Damacy</title>
+      <link>/2005/01/06/katamari-damacy/</link>
+      <pubDate>Thu, 06 Jan 2005 00:00:00 +0000</pubDate>
+      
+      <guid>/2005/01/06/katamari-damacy/</guid>
+      <description>I got my Katamari Damacy soundtrack today. This is a great soundtrack! It is really quirky and fun, with lots of unique tunes. It reminds me of the Sakura Taisen Vocal Collections that came out several years back, which are lots of fun. You really should pick it up if you haven&amp;rsquo;t already&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Wow report 1</title>
+      <link>/2004/12/28/wow-report-1/</link>
+      <pubDate>Tue, 28 Dec 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/12/28/wow-report-1/</guid>
+      <description>So now that I have some hours of playing on my back, I suppose I&amp;rsquo;ll ramble a bit about World of Warcraft. What I&amp;rsquo;ve found so far is mostly good news. I can&amp;rsquo;t help comparing it to the MMORPG that took so much of my time for so long: Dark Age of Camelot. So many things are similar between the two that I picked up on them right off. However there are some differences that force me to fight instincts pretty well ingrained from my zillions of hours of DAoC.</description>
+    </item>
+    
+    <item>
+      <title>Happy Christmas</title>
+      <link>/2004/12/26/happy-christmas/</link>
+      <pubDate>Sun, 26 Dec 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/12/26/happy-christmas/</guid>
+      <description>I swear I posted this yesterday. Either I dreamed I did, or I hallucinated it as it isn&amp;rsquo;t here. Perhaps LJ ate it. Anyway, I hope everyone had a great Christmas. I was only half awake all day because Zidane picked Christmas Eve to decide he wasn&amp;rsquo;t going to use that old broken RAM anymore. So Brian and I scrambled and fought to get it replaced, and just before midnight we succeeded.</description>
+    </item>
+    
+    <item>
+      <title>Potter!</title>
+      <link>/2004/12/21/potter/</link>
+      <pubDate>Tue, 21 Dec 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/12/21/potter/</guid>
+      <description>So we&amp;rsquo;ve a release date now. But July seems so far away&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>yeesh</title>
+      <link>/2004/12/16/yeesh/</link>
+      <pubDate>Thu, 16 Dec 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/12/16/yeesh/</guid>
+      <description>Well it&amp;rsquo;s been a while. Sorry about that. Things have been busy. Despite that, little of interest has happened. Yes, I live an exciting life.
+Over the weekend we made the first step at migrating one of our in house apps to a customized 3rd party replacement. That 3rd party replacement is soon to be fully developed in house, meaning we&amp;rsquo;ve migrated from one custom system to another. The system that will slowly be replaced is a cobbled together c++ application that, honestly, I&amp;rsquo;m surprised has worked as long as it has.</description>
+    </item>
+    
+    <item>
+      <title>Cat Haikus</title>
+      <link>/2004/12/09/cat-haikus/</link>
+      <pubDate>Thu, 09 Dec 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/12/09/cat-haikus/</guid>
+      <description>Start the morning off right with some delightful cat haikus. Molly got these from one of her teachers.
+Blur of motion, then - Silence, me, a paper bag. What is so funny? You&amp;rsquo;re always typing. Well, let&amp;rsquo;s see you ignore my Sitting on your hands. My small cardboard box. You cannot see me if I Can hide my head. Terrible battle. I fought for hours. Come and see! What&amp;rsquo;s a &amp;ldquo;term paper&amp;rdquo;?</description>
+    </item>
+    
+    <item>
+      <title>POMG</title>
+      <link>/2004/12/08/pomg/</link>
+      <pubDate>Wed, 08 Dec 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/12/08/pomg/</guid>
+      <description>There&amp;rsquo;s a NEW Michael Crichton book! How did I miss learning this until today? Well, I know what I&amp;rsquo;ll be doing during every moment of free time today!</description>
+    </item>
+    
+    <item>
+      <title>OFIM</title>
+      <link>/2004/12/06/ofim/</link>
+      <pubDate>Mon, 06 Dec 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/12/06/ofim/</guid>
+      <description>My boss just told us he&amp;rsquo;s leaving. This was a shock to all of us. He&amp;rsquo;s a wonderful boss, the best I&amp;rsquo;ve ever had in fact.
+We&amp;rsquo;ll have to temporarily report to his boss, who is a very unpleasant person. I hope he is replaced soon, and with someone who is decent.
+Wow, is it ever time to scream OFIM.
+ </description>
+    </item>
+    
+    <item>
+      <title>music ramblings</title>
+      <link>/2004/12/03/music-ramblings/</link>
+      <pubDate>Fri, 03 Dec 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/12/03/music-ramblings/</guid>
+      <description>A couple days back I picked up the Phantom of the Opera movie soundtrack. I did this after watching the newest trailer, which is one of the better trailers I&amp;rsquo;ve seen recently. Alas, some aspects of this soundtrack are pretty disappointing.
+I&amp;rsquo;m a big fan of musicals, although as a general rule I prefer the Lloyd Webber &amp;ldquo;operatic&amp;rdquo; musical over the older style that is sort of a play with songs.</description>
+    </item>
+    
+    <item>
+      <title>Folder actions</title>
+      <link>/2004/12/01/folder-actions/</link>
+      <pubDate>Wed, 01 Dec 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/12/01/folder-actions/</guid>
+      <description>Yes it is more Mac OS X rambling. Folder action scripts are so cool. Essentially, they allow you to execute an applescript anytime something happens to a folder. For example, you can set up a script that fires when a file is added to the desktop folder. This script could move any image files to your Pictures folder automatically. Or you could create a script attached to a folder that automatically resizes to a web friendly size any images placed inside.</description>
+    </item>
+    
+    <item>
+      <title>meetings again</title>
+      <link>/2004/11/30/meetings-again/</link>
+      <pubDate>Tue, 30 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/30/meetings-again/</guid>
+      <description>Yesterday I had the first meeting from Helen&amp;rsquo;s room scheduled for this week. Tomorrow I have the one I am dreading the most.
+Even worse, due to yesterday being an OFIM to remember, with problems and deadlines distracting me all morning, I was **late **to the meeting. And since I ran up several flights of stairs and all around the floor trying to find the room, I was very frazzled and out of breath when I finally made it.</description>
+    </item>
+    
+    <item>
+      <title>Day after thanksgiving IS SHOPPING MADDNESS</title>
+      <link>/2004/11/26/day-after-thanksgiving-is-shopping-maddness/</link>
+      <pubDate>Fri, 26 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/26/day-after-thanksgiving-is-shopping-maddness/</guid>
+      <description>I hope everyone who celebrates Thanksgiving had a highly spiffy Thanksgiving with all the food and fun one could want.
+I am so glad I&amp;rsquo;m not working retail anymore. I used to dread this day all year. Please folks, be nice to the poor retail workers today. They really have nothing to do with the fact that the UBER SUPER SALE items mentioned in the ad were never in stock even at the start of the day, and were simply a ploy to get you in the store.</description>
+    </item>
+    
+    <item>
+      <title>from iPod to G5</title>
+      <link>/2004/11/24/from-ipod-to-g5/</link>
+      <pubDate>Wed, 24 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/24/from-ipod-to-g5/</guid>
+      <description>Well, I&amp;rsquo;ve really jumped ship now, and I&amp;rsquo;ve bought a shiny new dual 2ghz G5. I blame the iPod and my insanity mostly, but it has been a bunch of fun so far. I wrote a rambling boring essay about reasons that might have contributed to the switch.
+I love technology and fooling around with the latest gadgets and software. When I first started fooling around with computers as a wee one, I was so intrigued with the idea of being able to have this magical box do what I tell it to do, at least most of the time.</description>
+    </item>
+    
+    <item>
+      <title>How rude is that?</title>
+      <link>/2004/11/23/how-rude-is-that/</link>
+      <pubDate>Tue, 23 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/23/how-rude-is-that/</guid>
+      <description>So I mosey over to the coffee machine and get a cup. The person in front of me fills his fifty gallon thermos with ALL of the coffee leaving me none. He does this RIGHT IN FRONT OF ME.
+Is it just me, or is that really fucking rude?</description>
+    </item>
+    
+    <item>
+      <title>FRIDAY</title>
+      <link>/2004/11/19/friday/</link>
+      <pubDate>Fri, 19 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/19/friday/</guid>
+      <description>Yes, it is friday. About bloody time. This week sure dragged on and on and on and on.
+Halflife 2 is really great. After looking forward to the game all this time, it is nice to be able to finally play it. But it is even nicer that the game is of such amazingly high quality. The first few hours of gameplay have been the most fun I can ever remember having playing a game.</description>
+    </item>
+    
+    <item>
+      <title>Yay for iPods</title>
+      <link>/2004/11/16/yay-for-ipods/</link>
+      <pubDate>Tue, 16 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/16/yay-for-ipods/</guid>
+      <description>So I picked up an iPod over the weekend, after much research and deliberation. (hearing the virtues first hand from put me over the edge)
+After using it a couple days now I&amp;rsquo;m very impressed. The iTunes integration is seamless and fast, and I was able to copy my gigantic nearly 100% (I have some out of print stuff I can&amp;rsquo;t find) legal 31G music collection over in about 40 minutes.</description>
+    </item>
+    
+    <item>
+      <title>Uptime</title>
+      <link>/2004/11/15/uptime/</link>
+      <pubDate>Mon, 15 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/15/uptime/</guid>
+      <description>My XP development box at work has beaten Zidane&amp;rsquo;s uptime record soundly. H:&amp;gt;uptime cherrytree has been up for: 49 day(s), 2 hour(s), 42 minute(s), 19 second(s) What is the world coming to? Oh, and just in case you didn&amp;rsquo;t know to do so already, you really should WATCH OUT FOR ZOMBIES.</description>
+    </item>
+    
+    <item>
+      <title>Important! ICANN rules change</title>
+      <link>/2004/11/11/important-icann-rules-change/</link>
+      <pubDate>Thu, 11 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/11/important-icann-rules-change/</guid>
+      <description>You should pay close attention to this if you own a domain name. A fairly brain-dead change of ICANN&amp;rsquo;s transfer rules will make it much easier for registrars to steal your domain registration away from your chosen registrar or even the domain itself. If your current registrar doesn&amp;rsquo;t allow you to lock the domain, you really should consider switching to a better one. If you are still with Network Solutions, not only are you paying much more than you should be, but you are supporting one of the more evil companies out there.</description>
+    </item>
+    
+    <item>
+      <title>!!!!!!</title>
+      <link>/2004/11/10/48/</link>
+      <pubDate>Wed, 10 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/10/48/</guid>
+      <description>3300 words. I am so far behind. Whatever shall I do?</description>
+    </item>
+    
+    <item>
+      <title>DOOM</title>
+      <link>/2004/11/09/doom/</link>
+      <pubDate>Tue, 09 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/09/doom/</guid>
+      <description>Your doom is mydoom. There&amp;rsquo;s a fun new IE specific virus out there, all you&amp;rsquo;ve gotta do is visit a URL to get it. Isn&amp;rsquo;t that nice. The links above lead to Symantec&amp;rsquo;s writeup, btw, not an evil page. Seeing that Firefox 1.0 was just released, wouldn&amp;rsquo;t today make a great day to upgrade to a Better Browser? Here&amp;rsquo;s a direct link to the Firefox installers, because their site is swamped.</description>
+    </item>
+    
+    <item>
+      <title>Halo 2 day!</title>
+      <link>/2004/11/09/halo-2-day/</link>
+      <pubDate>Tue, 09 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/09/halo-2-day/</guid>
+      <description>Yep, today&amp;rsquo;s the day. I&amp;rsquo;m waiting until after Nano because if I have that distraction, there&amp;rsquo;s no hope I&amp;rsquo;ll finish. I&amp;rsquo;m going to end up buying quite a few games after Nano. It seems like this month is the official month of must have games.</description>
+    </item>
+    
+    <item>
+      <title>crimeny</title>
+      <link>/2004/11/07/crimeny/</link>
+      <pubDate>Sun, 07 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/07/crimeny/</guid>
+      <description>Must catch up! I started behind and I&amp;rsquo;m not catching up! Must catch up! Word count it 2800&amp;hellip;only about 8000 to go to be caught up.</description>
+    </item>
+    
+    <item>
+      <title>Passive Voice</title>
+      <link>/2004/11/07/passive-voice/</link>
+      <pubDate>Sun, 07 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/07/passive-voice/</guid>
+      <description>Help! I can&amp;rsquo;t escape the evils of passive voice! Woe is me! EDIT: 3133 Gasp, I&amp;rsquo;m still so far behind&amp;hellip;.</description>
+    </item>
+    
+    <item>
+      <title>nano</title>
+      <link>/2004/11/05/nano/</link>
+      <pubDate>Fri, 05 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/05/nano/</guid>
+      <description>Well, I&amp;rsquo;ve finally started to get some writing done for Nanowrimo. I&amp;rsquo;m up to ~1800 words. Go me. I hope I can make up the time I lost for starting late over the weekend. I&amp;rsquo;m fairly pleased with how it is turning out so far. Nanowrimo really is a great idea.</description>
+    </item>
+    
+    <item>
+      <title>arrrrrrg!</title>
+      <link>/2004/11/04/arrrrrrg/</link>
+      <pubDate>Thu, 04 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/04/arrrrrrg/</guid>
+      <description>Error converting data type varchar to numeric. YES I&amp;rsquo;M STILL FIGHTING THIS GODDAMN PROBLEM. I think I&amp;rsquo;m nearing my breaking point. I can feel the insanity. I&amp;rsquo;d like to have a chat with the SQL Server developer who wrote the code that produces this error message. Iit would only be a chat. No violence. REALLY.</description>
+    </item>
+    
+    <item>
+      <title>Well</title>
+      <link>/2004/11/04/well/</link>
+      <pubDate>Thu, 04 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/04/well/</guid>
+      <description>It was a bug in SQL Server&amp;rsquo;s query optimizer. I brought a second co-worker to look over the queries and he was able to find a workaround. (a complex one that slows the query down, but IT WORKS) EDIT: When I say slow, I mean slow. The query ran in about 5 seconds before, and now it is up to over 20 minutes. THIS IS NOT MAKING ME A HAPPY PROGRAMMER!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/2004/11/03/38/</link>
+      <pubDate>Wed, 03 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/03/38/</guid>
+      <description>I really think Gandalf the cat was the best candidate, and he didn&amp;rsquo;t even place in my state. That is very depressing. My hate of both candidates aside, I hope whomever you wanted to win did. If not, at least it is only for four years. It won&amp;rsquo;t be long before there&amp;rsquo;s another chance. I hope there&amp;rsquo;s a candidate I can believe in at that time, but without some major changes I don&amp;rsquo;t see how it&amp;rsquo;s possible.</description>
+    </item>
+    
+    <item>
+      <title>Well it&#39;s over</title>
+      <link>/2004/11/03/well-its-over/</link>
+      <pubDate>Wed, 03 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/03/well-its-over/</guid>
+      <description>&amp;ndash; Sen. John Kerry calls President Bush to concede presidential election, CNN has learned. Again, I hope that&amp;rsquo;s who you wanted. It wasn&amp;rsquo;t who I wanted, but I can&amp;rsquo;t have everything I want.</description>
+    </item>
+    
+    <item>
+      <title>Vote!</title>
+      <link>/2004/11/02/vote/</link>
+      <pubDate>Tue, 02 Nov 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/11/02/vote/</guid>
+      <description>Remember to get out and vote today. I going to vote for my cat Gandalf for president. He is much more qualified than either of the leading losers, and is much softer and cuter. That should be good enough for you too, although I&amp;rsquo;m willing to accept that you&amp;rsquo;ll want to vote for your cat. So go out and vote. Elect your cat for president. Meow.</description>
+    </item>
+    
+    <item>
+      <title>ack, the horror!</title>
+      <link>/2004/10/31/ack-the-horror/</link>
+      <pubDate>Sun, 31 Oct 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/10/31/ack-the-horror/</guid>
+      <description>Nobuo Uematsu Leaves Square Enix
+While the story isn&amp;rsquo;t all bad news, I&amp;rsquo;m really starting to worry about Square/Enix. They seem to have lost many of the folks who made them so magical, and their latest stuff really isn&amp;rsquo;t living up to their games of the past. I think they know this, and are trying to bank on popular names in the FF series instead of coming up with new an original stuff.</description>
+    </item>
+    
+    <item>
+      <title>duh</title>
+      <link>/2004/10/31/duh/</link>
+      <pubDate>Sun, 31 Oct 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/10/31/duh/</guid>
+      <description>Well, Molly just left for a Halloween party. Being the fun hating recluse that I am, I&amp;rsquo;m home listening to video game music. Later I&amp;rsquo;ll probably do some WORK. Woo! Wee! As she was leaving I said something or the other about today being Halloween. Well, as I&amp;rsquo;m sure everyone else who is reading this knows that&amp;rsquo;s tomorrow. Duh. Well, back to the music!</description>
+    </item>
+    
+    <item>
+      <title>Lots o music</title>
+      <link>/2004/10/30/lots-o-music/</link>
+      <pubDate>Sat, 30 Oct 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/10/30/lots-o-music/</guid>
+      <description>I have OODLES of music. I mean oodles and oodles. I have so much assorted gaming, anime and movie music that sometimes I don&amp;rsquo;t listen to something for a really really long time.
+Every now and then I go through some of my older stuff and rediscover things I&amp;rsquo;d forgotten I have. One example is an absolutely hilarious &amp;ldquo;Mariah Carey&amp;rdquo; parody version of the Magic Knights Rayearth opening theme. Working Designs put it up on their site many years back as an April fools joke.</description>
+    </item>
+    
+    <item>
+      <title>Halloween</title>
+      <link>/2004/10/29/halloween/</link>
+      <pubDate>Fri, 29 Oct 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/10/29/halloween/</guid>
+      <description>I work at Raymond James. (you know, the place that bought the naming rights for the football stadium in Tampa) They really really really take Halloween seriously here.
+I remember my first Halloween here, seven long years ago. Back then, they took it even more seriously. What I remember most is distribution service&amp;rsquo;s Psycho Circus. They had a Disney quality walk through attraction that must have taken all year to make.</description>
+    </item>
+    
+    <item>
+      <title>Zidane status/stats</title>
+      <link>/2004/10/27/zidane-statusstats/</link>
+      <pubDate>Wed, 27 Oct 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/10/27/zidane-statusstats/</guid>
+      <description>If you are curious, you can have a look at the stats for Zidane and the box&amp;rsquo;s current load and uptime at the page I finally took the time to update and get working again. Heh. http://greglincoln.com/server/uptime.php Uptime is pretty embarrasing recently. I think Rocket was over 100 days when he finally went to the big rack in the sky, but his all time record was over 200 days. Until the end, Rocket was rock solid.</description>
+    </item>
+    
+    <item>
+      <title>bleep, bloop</title>
+      <link>/2004/10/25/bleep-bloop/</link>
+      <pubDate>Mon, 25 Oct 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/10/25/bleep-bloop/</guid>
+      <description>Fah. Mondays suck. Particularly when they are after a week long vacation. Egad is it hard to wake up at 0630 after shifting to some European timezone. It didn&amp;rsquo;t help much that the day has been crap overall. I had 1.2 billion emails waiting for me, and two meetings. Sigh. Did I mention I hate meetings? I think I did. If not, let me mention that I hate meetings.
+And then Zidane fell over and hardlocked around lunchtime.</description>
+    </item>
+    
+    <item>
+      <title>regrets</title>
+      <link>/2004/10/19/regrets/</link>
+      <pubDate>Tue, 19 Oct 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/10/19/regrets/</guid>
+      <description>I have quite a few regrets already in my fairly short life, most of which I’d not talk about in a “public” forum. One recent one was brought back to light this past Sunday afternoon.
+I spent nearly my whole school life (5th-12th) at a military boarding school: Admiral Farragut Academy. Farragut is a great school, and nearly everything good about me that isn’t due to my parents is due to Farragut.</description>
+    </item>
+    
+    <item>
+      <title>Games</title>
+      <link>/2004/10/17/games/</link>
+      <pubDate>Sun, 17 Oct 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/10/17/games/</guid>
+      <description>I picked up two highly spiffy games today. Star Ocean: Till the End of Time and Shin Megami Tensei: Nocturne. Both are highly excellent. Star Ocean features lots of excellent voice acting, and some amazing character animation, the likes of which I&amp;rsquo;ve not seen since Kingdom Hearts. It also has some excellent fully orchestrated music and a great start at a fairly predictable but interesting story. The translation seems to be top notch, and lacks the odd dialog elements that some of Square&amp;rsquo;s stuff has had in the past.</description>
+    </item>
+    
+    <item>
+      <title>bleh</title>
+      <link>/2004/10/14/bleh/</link>
+      <pubDate>Thu, 14 Oct 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/10/14/bleh/</guid>
+      <description>I just got a cup of flavored coffee by mistake. I can&amp;rsquo;t throw it out as I hate wasting things. Oh, it&amp;rsquo;s so nasty. Woe is me.</description>
+    </item>
+    
+    <item>
+      <title>&#39;Burbs</title>
+      <link>/2004/10/13/burbs/</link>
+      <pubDate>Wed, 13 Oct 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/10/13/burbs/</guid>
+      <description>Just watched one of my favorite movies: The &amp;lsquo;Burbs. It has a great Jerry Goldsmith score and an excellent cast. I also think it might be Joe Dante&amp;rsquo;s best work, although I really liked Innerspace and Gremlins. It certainly is the funniest, in my oh so humble opinion. Dante seems to like to reuse cast. Dick Miller and Corey Feldman were both in Gremlins, and Dick Miller and Robert Picardo were both in Innerspace.</description>
+    </item>
+    
+    <item>
+      <title>arrg</title>
+      <link>/2004/10/13/arrg/</link>
+      <pubDate>Wed, 13 Oct 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/10/13/arrg/</guid>
+      <description>I hate meetings. I hate them to the very core of the very fiber of my very being.</description>
+    </item>
+    
+    <item>
+      <title>Microsoft security patches</title>
+      <link>/2004/10/13/microsoft-security-patches/</link>
+      <pubDate>Wed, 13 Oct 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/10/13/microsoft-security-patches/</guid>
+      <description>There&amp;rsquo;s some pretty serious security bugs fixed by a bunch of patches Microsoft released today. Most of them don&amp;rsquo;t apply to XP users who&amp;rsquo;ve applied Service Pack 2, but one of the more serious ones does. Service Pack 2 is a pretty large improvement in security for Windows, so if you haven&amp;rsquo;t installed it yet, you really oughta. The scariest of the flaws is MS04-038, which applies to Internet Explorer and affects everyone who uses it.</description>
+    </item>
+    
+    <item>
+      <title>Quotable Claris Project</title>
+      <link>/2004/10/13/quotable-claris-project/</link>
+      <pubDate>Wed, 13 Oct 2004 00:00:00 +0000</pubDate>
+      
+      <guid>/2004/10/13/quotable-claris-project/</guid>
+      <description>** &amp;ldquo;Fear is the first thing you know when you&amp;rsquo;re born and the last thing you know when you die,&amp;rdquo; he turned his head to hold my eyes with his, his irises smoldering gold. &amp;ldquo;It will never forsake you. It&amp;rsquo;s not like love and joy, those fleeting emotions. Those emotions that are only there when they&amp;rsquo;re getting something in return. Those emotions that are gone at the slightest change of plans.</description>
+    </item>
+    
+  </channel>
+</rss>

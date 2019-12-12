@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Writing on Greg&#39;s Adventures</title>
+    <link>/tags/writing/</link>
+    <description>Recent content in Writing on Greg&#39;s Adventures</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright (c) 2019 Greg Lincoln, all rights reserved.</copyright>
+    <lastBuildDate>Mon, 23 Nov 2009 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/writing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>My box can has shinies!</title>
+      <link>/2009/11/23/my-box-can-has-shinies/</link>
+      <pubDate>Mon, 23 Nov 2009 00:00:00 +0000</pubDate>
+      
+      <guid>/2009/11/23/my-box-can-has-shinies/</guid>
+      <description>Found on a forum:
+ I think of my inner world like a child holding a box of their most precious treasures and when they show it to someone the person laughs and teases that that they aren&amp;rsquo;t treasures, they are worthless knickknacks and stones. What hurts isn&amp;rsquo;t being told that they are worthless, what hurts is that something so wonderful could not be shared. What doesn&amp;rsquo;t do any good is locking the box up and showing no one ever again.</description>
+    </item>
+    
+    <item>
+      <title>Fictional Writings</title>
+      <link>/2008/04/10/fictional-writings/</link>
+      <pubDate>Thu, 10 Apr 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/2008/04/10/fictional-writings/</guid>
+      <description>And I mean writing that doesn&amp;rsquo;t exist, not writing about things that don&amp;rsquo;t exist.
+So I&amp;rsquo;m working on what feels like a novel, perhaps of slightly shorter than what would be considered a big book, but not so short as to not fall into the novel category. It also seems to want to be a young adult book, through it wasn&amp;rsquo;t one when it was still rattling around in the cobwebs of my lack-of-brain.</description>
+    </item>
+    
+  </channel>
+</rss>

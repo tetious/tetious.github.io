@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.59.1" />
+
+<link rel="canonical" href="/2013/06/08/ubuntu-keyring-gotcha/">
+<meta property="og:title" content="Ubuntu Keyring Gotcha" />
+<meta property="og:description" content="One nice feature you get for free with OSX is an automatic handy ssh keyring thingie that loads in all your private keys and optionally saves their passphrases to the native keychain app. This native keychain application has highly customizable security options that, when configured properly, make it difficult (impossible?) for someone without your account credentials to use your private key without providing the passphase, while still allowing for a &ldquo;single sign on&rdquo; experience of happiness." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/2013/06/08/ubuntu-keyring-gotcha/" />
+<meta property="article:published_time" content="2013-06-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2013-06-08T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ubuntu Keyring Gotcha"/>
+<meta name="twitter:description" content="One nice feature you get for free with OSX is an automatic handy ssh keyring thingie that loads in all your private keys and optionally saves their passphrases to the native keychain app. This native keychain application has highly customizable security options that, when configured properly, make it difficult (impossible?) for someone without your account credentials to use your private key without providing the passphase, while still allowing for a &ldquo;single sign on&rdquo; experience of happiness."/>
+
+
+<meta itemprop="name" content="Ubuntu Keyring Gotcha">
+<meta itemprop="description" content="One nice feature you get for free with OSX is an automatic handy ssh keyring thingie that loads in all your private keys and optionally saves their passphrases to the native keychain app. This native keychain application has highly customizable security options that, when configured properly, make it difficult (impossible?) for someone without your account credentials to use your private key without providing the passphase, while still allowing for a &ldquo;single sign on&rdquo; experience of happiness.">
+
+
+<meta itemprop="datePublished" content="2013-06-08T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2013-06-08T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="428">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Ubuntu Keyring Gotcha 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="/">Greg&#39;s Adventures</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/about/"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:greg@greglincoln.com"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/tetious" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+  <a href="https://gitlab.com/tetious" target="_blank"><div class="social-link">gl</div></a>
+  
+
+  
+  <a href="https://twitter.com/tetious" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Ubuntu Keyring Gotcha </h1>
+    <div class="content"> <p>One nice feature you get for free with OSX is an automatic handy ssh keyring thingie that loads in all your private keys and optionally saves their passphrases to the native keychain app.  This native keychain application has highly customizable security options that, when configured properly, make it difficult (impossible?) for someone without your account credentials to use your private key without providing the passphase, while still allowing for a &ldquo;single sign on&rdquo; experience of happiness.</p>
+
+<p>I&rsquo;m sure that I&rsquo;m less secure by using this as I have it configured, which is slightly more relaxed than the voices in my head recommend, but a security plan in implementation is always a balance of convenience and security, and so I&rsquo;m okay with the risks as long as I don&rsquo;t think about them very long.</p>
+
+<p>I&rsquo;ve been experimenting with Ubuntu&rsquo;s latest desktop release on my Zenbook Prime (it works nearly perfectly out of the box, by the way) and at first I was surprised there wasn&rsquo;t something to do this automagically like on my Mac. As I&rsquo;m sure you can guess, there is, but there is an associated gotcha.</p>
+
+<p>On a Mac, all you need do is copy your private key to your .ssh folder with one of the default names, such as id_dsa. (it is possible it is even more flexible with names, but I didn&rsquo;t test this) The next time you use the key, OSX will prompt you for the passphrase and offer to save it for you. I think it does this using an ssh-agent alike or plugin or something, but I don&rsquo;t really know the details. It just works, like proper magic.</p>
+
+<p>But when I tried this on the Ubuntu install, it didn&rsquo;t prompt me on the gui level as I expected, but in the terminal like the ssh client normally does when you don&rsquo;t have this magic happening. I puzzled around a bit, and after going down a few wrong paths, I figured it out.</p>
+
+<p>Ubuntu expects to see a key-pair. That is, your private key (id_rsa or whatever) <strong>and</strong> the public key (id_rsa.pub or whatever). If it does not find <strong>both</strong>, the magic does not occur, and further, if you attempt to import your private key manually via sasquash or whatever the bizarrely named keychain management tool is on Ubuntu that I can never remember, you get an unhelpful error that doesn&rsquo;t suggest it needs the public key file there too.</p>
+
+<p>So the fix is to copy in your public key (properly named) and let the magic work. No fiddling is needed. Easy peasy!</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 8 Jun 2013 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:greg@greglincoln.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/tetious" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+  <a href="https://gitlab.com/tetious" target="_blank"><div class="social-link">GitLab</div></a>
+  
+
+  
+  <a href="https://twitter.com/tetious" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+
+  <div class="social-link">
+  <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019 Greg Lincoln, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

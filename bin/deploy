@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+bundle exec jekyll build && rsync -avz --delete _site/ tetious@173.236.180.196:~/mazin.net

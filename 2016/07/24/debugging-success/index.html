@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.59.1" />
+
+<link rel="canonical" href="/2016/07/24/debugging-success/">
+<meta property="og:title" content="Debugging Success!" />
+<meta property="og:description" content="Yesterday I mentioned I wasn&rsquo;t able to get debugging going with JTAG and my STM32 dev board. I puzzled it out today, and it was a definite PEBKAC. Alas. In the hopes that it may help someone, I&rsquo;ll share my results here.
+The key is a &ldquo;make it work&rdquo; setting within CubeMX. By default, the JTAG pins are not configured! This is probably obvious to folks used to working with this platform." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/2016/07/24/debugging-success/" />
+<meta property="article:published_time" content="2016-07-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-07-24T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Debugging Success!"/>
+<meta name="twitter:description" content="Yesterday I mentioned I wasn&rsquo;t able to get debugging going with JTAG and my STM32 dev board. I puzzled it out today, and it was a definite PEBKAC. Alas. In the hopes that it may help someone, I&rsquo;ll share my results here.
+The key is a &ldquo;make it work&rdquo; setting within CubeMX. By default, the JTAG pins are not configured! This is probably obvious to folks used to working with this platform."/>
+
+
+<meta itemprop="name" content="Debugging Success!">
+<meta itemprop="description" content="Yesterday I mentioned I wasn&rsquo;t able to get debugging going with JTAG and my STM32 dev board. I puzzled it out today, and it was a definite PEBKAC. Alas. In the hopes that it may help someone, I&rsquo;ll share my results here.
+The key is a &ldquo;make it work&rdquo; setting within CubeMX. By default, the JTAG pins are not configured! This is probably obvious to folks used to working with this platform.">
+
+
+<meta itemprop="datePublished" content="2016-07-24T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-07-24T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="238">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Debugging Success! 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="/">Greg&#39;s Adventures</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/about/"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:greg@greglincoln.com"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/tetious" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+  <a href="https://gitlab.com/tetious" target="_blank"><div class="social-link">gl</div></a>
+  
+
+  
+  <a href="https://twitter.com/tetious" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Debugging Success! </h1>
+    <div class="content"> <p>Yesterday I mentioned I wasn&rsquo;t able to get debugging going with JTAG and my STM32 dev board. I puzzled it out today, and it was a definite PEBKAC. Alas. In the hopes that it may help someone, I&rsquo;ll share my results here.</p>
+
+<p>The key is a &ldquo;make it work&rdquo; setting within CubeMX. By default, the JTAG pins are not configured! This is probably obvious to folks used to working with this platform. So obvious that nothing on Google pointed me in this direction. I happened on it accidentally. If you want to know more about that process, check out the video at the bottom of the post, where I break out the oscilloscope to chase a red herring and then eventually figure out the real cause.</p>
+
+<p><img src="/img/stm-debug-makeitwork.png" alt="Make it work!" />{: .well .img-rounded .img-responsive}</p>
+
+<p>See that setting under SYS? You gotta enable that. Once you do, JTAG works perfectly. Yay!</p>
+
+<p>Next, to get things going with CLion (anything that supports remote GDB should work) configure a debug configuration like below.</p>
+
+<p><img src="/img/stm-debug-makeitwork-2.png" alt="CLion setup" />{: .well .img-rounded .img-responsive}</p>
+
+<p>Then you need only flash, reset the board, and connect with OpenOCD. It connect. To be able to debug, you then need to reset and wait for GDB to attach by entering <code>reset halt</code> in your OpenOCD telnet session.</p>
+
+<p>If you run into trouble, check out the video below, where I show this stuff step by step, and give a quick demo. Have fun!</p>
+
+<p>{% youtube KkQztyNdRLI %}</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 24 Jul 2016 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:greg@greglincoln.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/tetious" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+  <a href="https://gitlab.com/tetious" target="_blank"><div class="social-link">GitLab</div></a>
+  
+
+  
+  <a href="https://twitter.com/tetious" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+
+  <div class="social-link">
+  <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019 Greg Lincoln, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

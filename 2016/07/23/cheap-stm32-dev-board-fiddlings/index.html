@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+<meta charset="utf-8" />
+<meta name="author" content="" />
+<meta name="description" content="Personal blog." />
+<meta name="keywords" content="blog, tech" />
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.59.1" />
+
+<link rel="canonical" href="/2016/07/23/cheap-stm32-dev-board-fiddlings/">
+<meta property="og:title" content="Cheap STM32 dev board fiddlings." />
+<meta property="og:description" content="The Prelude The STM32 has garnered some attention lately as a possible successor/upgrade for the limited AVR microcontrollers that most Arduinos use. I&rsquo;m not sure why it has captured the spotlight away from other interesting options, such as the Freescale part used in the Teensy. Perhaps that&rsquo;s only my perception. There is certainly room enough for multiple nifty alternatives.
+As is common, the place to go for cheap and cheerful if slightly dodgy electronical goodness is Banggood." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/2016/07/23/cheap-stm32-dev-board-fiddlings/" />
+<meta property="article:published_time" content="2016-07-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-07-23T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cheap STM32 dev board fiddlings."/>
+<meta name="twitter:description" content="The Prelude The STM32 has garnered some attention lately as a possible successor/upgrade for the limited AVR microcontrollers that most Arduinos use. I&rsquo;m not sure why it has captured the spotlight away from other interesting options, such as the Freescale part used in the Teensy. Perhaps that&rsquo;s only my perception. There is certainly room enough for multiple nifty alternatives.
+As is common, the place to go for cheap and cheerful if slightly dodgy electronical goodness is Banggood."/>
+
+
+<meta itemprop="name" content="Cheap STM32 dev board fiddlings.">
+<meta itemprop="description" content="The Prelude The STM32 has garnered some attention lately as a possible successor/upgrade for the limited AVR microcontrollers that most Arduinos use. I&rsquo;m not sure why it has captured the spotlight away from other interesting options, such as the Freescale part used in the Teensy. Perhaps that&rsquo;s only my perception. There is certainly room enough for multiple nifty alternatives.
+As is common, the place to go for cheap and cheerful if slightly dodgy electronical goodness is Banggood.">
+
+
+<meta itemprop="datePublished" content="2016-07-23T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2016-07-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2039">
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<link rel="stylesheet" href="/css/layout.css" />
+
+
+<link rel="stylesheet" href="/css/default-dark.css" />
+
+
+
+
+<title>
+
+
+     Cheap STM32 dev board fiddlings. 
+
+</title>
+
+</head>
+
+
+<body>
+<div class="main">
+<header>
+
+<div class="header-bar">
+
+  <nav>
+    <div class="siteTitle">
+      <a href="/">Greg&#39;s Adventures</a>
+    </div> 
+
+    
+    
+    <a class="nav-item" href="/about/"><div class="nav-item-title">About</div></a>
+    
+
+  </nav>
+
+  
+<div class="social-links-header">
+
+  
+  <a href="mailto:greg@greglincoln.com"><div class="social-link">email</div></a>
+  
+
+  
+  <a href="https://github.com/tetious" target="_blank"><div class="social-link">gh</div></a>
+  
+
+  
+  <a href="https://gitlab.com/tetious" target="_blank"><div class="social-link">gl</div></a>
+  
+
+  
+  <a href="https://twitter.com/tetious" target="_blank"><div class="social-link">twtr</div></a>
+  
+
+  
+
+</div>
+
+
+</div>
+
+
+</header>
+
+
+<article class="post">
+    <h1 class="title"> Cheap STM32 dev board fiddlings. </h1>
+    <div class="content"> 
+
+<h4 id="the-prelude">The Prelude</h4>
+
+<p>The STM32 has garnered some attention lately as a possible successor/upgrade for the limited AVR microcontrollers that most Arduinos use. I&rsquo;m not sure why it has captured the spotlight away from other interesting options, such as the Freescale part used in the Teensy. Perhaps that&rsquo;s only my perception. There is certainly room enough for multiple nifty alternatives.</p>
+
+<p>As is common, the place to go for cheap and cheerful if slightly dodgy electronical goodness is Banggood. They don&rsquo;t disappoint with the STM32, as we have <a href="http://www.banggood.com/ARM-Cortex-M3-STM32F103C8T6-STM32-Minimum-System-Development-Board-p-920184.html">this fine option</a> for only $5 shipped.</p>
+
+<p>The board is fairly well appointed. It is based on the F103C8T6 variant, with a pinout that exposes nearly all of the chip&rsquo;s IO. If you read <a href="http://media.digikey.com/pdf/Data%20Sheets/ST%20Microelectronics%20PDFS/STM32F103x8,B.pdf">the datasheet</a>, you&rsquo;ll find the chip is packed with interesting features, including two 12bit ADCs, 3 hardware UARTS, multiple hardware SPI/I2C interfaces, and screams along at &ldquo;up to&rdquo; 72mhz.</p>
+
+<p>Of course, you can&rsquo;t use all these features at once due to limited pins, in this case, a &ldquo;mere&rdquo; 48. The variant on the Banggood board has 64k of flash, which can also be a bit limiting. For the price though, it is hard to beat. Digikey charges over $6 for a bare chip! (at one-off quantities)</p>
+
+<h4 id="the-setup">The Setup</h4>
+
+<p>But on to the reason for this post. The board ships with no documentation, and given the friendly looking USB (mini, not micro, curses!) port, you could be forgiven for assuming you&rsquo;ll have a straightforward programming experience, like that with the Arduino. Out of the box, that is most certainly <strong>not</strong> the case.</p>
+
+<p>While there are apparently ways to put an Arduino-ish firmware on the board, which may unlock that level of ease-of-use, and even use of the Arduino IDE (ugh), I didn&rsquo;t look into that. I want to use STM&rsquo;s tools along with OpenOCD to write to the bare silicon in glorious, unlimited C.</p>
+
+<p>The first thing you&rsquo;ll need is a programmer board that supports OpenOCD. Rather than rattle out options, I&rsquo;ll point you to the <a href="http://openocd.org/doc/html/Debug-Adapter-Hardware.html#Choosing-a-Dongle">&ldquo;Choosing a Dongle&rdquo;</a> section of OpenOCD&rsquo;s documentation. There are oodles of choices, many of which can be had for less than $30. I already had two supported &ldquo;dongles,&rdquo; Olimex&rsquo;s fantastic <a href="https://www.olimex.com/Products/ARM/JTAG/ARM-USB-TINY-H/">ARM-USB-TINY-H</a>, and the crazy versatile <a href="http://dangerousprototypes.com/docs/Bus_Pirate">Bus Pirate</a>. I decided to use the Olimex device for my experimentation today.</p>
+
+<p>One word of warning: not all dongles support debugging. You&rsquo;ll probably want this at some point, and one of the cheapest options, a clone of the J-Link V8, will give you full debug support. Ebay has quite a few options for about $25. It also supports the Segger software apparently, though using it with that is in a gray area of legality. If you stick to OpenOCD, you can keep your conscience from twitching. OpenOCD is awesome, so why look elsewhere?</p>
+
+<p>I&rsquo;m going to continue assuming you have my exact hardware. Hopefully you can figure out how to tweak things if you have a different dongle.</p>
+
+<p>After installing OpenOCD (I built the 0.9 release without trouble on my Ubuntu 16.04 machine), I created a config file for the board, which was ridiculously simple.</p>
+
+<pre><code>source [find interface/ftdi/olimex-arm-usb-tiny-h.cfg]
+source [find target/stm32f1x.cfg]
+</code></pre>
+
+<p>You can find configuration scripts for all the supported dongles wherever your OS of choice stuffs shared components. For me, it was <code>/usr/local/share/openocd/</code>. If you intend to use any of the FTDI based boards, take note of the ftdi subdirectory in my config file. There is a script in the root of the interface directory with the same name (olimex-arm-usb-tiny-h.cfg). If you use this file, OpenOCD will explode with a puzzling error, as it uses a deprecated driver for the FTDI chip that this and several other boards are built upon. This driver is disabled by default. I think they should have moved the deprecated configuration files somewhere else to prevent confusion. It would have saved a few minutes of head scratching.</p>
+
+<p>The next thing is a &ldquo;nice to have.&rdquo; STM provides a free, <a href="http://www.st.com/content/st_com/en/products/development-tools/software-development-tools/stm32-software-development-tools/stm32-configurators-and-code-generators/stm32cubemx.html">cross-platform GUI</a> to help you configure your MCU. This is important because the more advanced chip features are much more involved to set up compared to Arduino style pin input/output directives. Plus, there are interactions between features that are non-obvious. Certain features won&rsquo;t work while others are enabled, or have specific pins they must use.</p>
+
+<p>The setup isn&rsquo;t magical, and you can certainly figure it out on your own, but the GUI helps reduce the cognitive load. Additionally, the code-gen automatically moves in all the includes and libraries required to build/link. This is arguably even more important, as setting up the requirements can be a bit complicated.</p>
+
+<p>To build, we need a cross complier. I used the GNU ARM Embedded Toolchain, installed via <a href="https://launchpad.net/~team-gcc-arm-embedded/+archive/ubuntu/ppa">this PPA</a>. It installed cleanly and without issue.</p>
+
+<p>Lastly, if you&rsquo;d like to replicate my setup, you&rsquo;ll want to have cmake installed and working properly. Cmake is a happy thing, and I never want to use gnu make again. Generally, setting up Cmake is as easy as installing the package with your OS&rsquo;s package manager. Unless you are running Windows, which makes everything more complicated.</p>
+
+<p>My make files are largely based on those provided in <a href="https://blog.jetbrains.com/clion/2016/06/clion-for-embedded-development/">this excellent post</a> on the CLion blog. You can check them out in <a href="https://gist.github.com/tetious/72fdf207cd8881fa6e252daebfc1f2b4">this gist</a>. I used CLion, but most of my experience should apply to other IDEs, or even just an editor. The make files will work from the command-line as is, just remember to pass <code>-DCMAKE_TOOLCHAIN_FILE=stm32f103.cmake</code> when you build so CMake uses the arm toolchain.</p>
+
+<h4 id="the-blinkin-project">The Blinkin&rsquo; Project</h4>
+
+<p>My project of choice to test things out is the well loved &ldquo;Blinky&rdquo; LED thingie that has become the hello world of the hardware world. Replicating this with the above-mentioned toolchain is surprisingly straightforward.</p>
+
+<p>First, in the STM32Cube app, which I&rsquo;m going to call Cube from now on because it is easier to type, I created a new project. Make sure you carefully find the correct chip in the list. The numbers are many, and it is somewhat confusing. It is possible to change the chip later if you get it wrong, but getting it right to start is more fun. Right? Right.</p>
+
+<p>Next, wire a pin to GPIO Output. This is super easy in STM&rsquo;s tool. Just click the pin and pick &ldquo;Output.&rdquo; In the screenshot below you can see my final configuration, with a few more pins configured. You can use any of the general purpose pins except pin 2. Whatever you do, <strong>do not use pin 2!</strong> More about that later.</p>
+
+<p><img src="/img/stm-blinky-1.png" alt="The Cube" />{: .well .img-rounded .img-responsive}</p>
+
+<p>Then, go to Project-&gt;Generate Code and select a toolchain. The GCC toolchain isn&rsquo;t in the list for some reason, but SW4STM32 seems to work reasonably well. On the &ldquo;Code Generator&rdquo; tab, make sure &ldquo;Keep User Code&rdquo; is checked. When you edit Src/main.c later, you&rsquo;ll see user code comment blocks throughout. If you place your code in these sections, in new files, or in new sections following the template of the others, you can use Cube to tweak and regenerate at will, without losing anything. Unless you forget and write something outside the marked sections. Not that I did that. Nope. Didn&rsquo;t need to use CLion&rsquo;s local history to restore it, either.</p>
+
+<p>Quick aside. I found it instructive to use CLion&rsquo;s local history to examine the changes that Cube made to the various files. I know all the details are in the documentation. If you want your head to explode with complexity overload, feel free to read the documentation. I kid. It really isn&rsquo;t that bad. Mostly.</p>
+
+<p>Now, stuff the Cmake files from the gist into the folder created by the code generation step, and you should be able to build. Huzzah! The output of a build confusingly comprises several files. The most important of which is the .hex file that will appear in the build subdirectory. That is what we&rsquo;re going to flash to the board. Well, once we make it do something slightly more interesting.</p>
+
+<p>Open up Src/main.c, and in the while(1) endless loop, set up the familiar blinky. The syntax isn&rsquo;t that scary. It is much better than some other MCUs I&rsquo;ve fiddled with, thanks to some nice abstractions.</p>
+
+<pre><code>  while (1)
+  {
+  /* USER CODE BEGIN 3 */
+      HAL_Delay(1000);
+      HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+  /* USER CODE END 3 */
+  }
+</code></pre>
+
+<p>Do a quick build and we&rsquo;re ready to flash the flashy. Hopefully you&rsquo;ve gotten OpenOCD up and running. Now is the time for us to make use of that preparation. Start it up, and you should see something like this:</p>
+
+<p><img src="/img/stm-blinky-2.png" alt="Happy JTAG" />{: .well .img-rounded .img-responsive}</p>
+
+<p>If you see this instead, stick around until the gotchas section for some tips.</p>
+
+<p><img src="/img/stm-blinky-3.png" alt="Sad JTAG" />{: .well .img-rounded .img-responsive}</p>
+
+<p>Working with OpenOCD is a little odd. It starts up a telnet server (and a GDB compatible widget for &ldquo;remote&rdquo; debugging, more on that later) you use to interact with the JTAG daemon.</p>
+
+<p>To flash your file, simply connect on port 4444 like this: <code>telnet localhost 4444</code> and you can then run <code>program build/r1_blink.hex</code>. It will trundle a moment and hopefully report success. There are a number of much harder ways to flash the chip that you may have found while Googling around. This way has worked fine for me every time. I&rsquo;m sure there is a reason for the more complicated methods, though.</p>
+
+<p>Now at this point, I think you are meant to reset the board with <code>reset run</code> or <code>reset halt</code>, the latter of which should break at the first line of code and patiently allow you to attach a debugger. For reasons that I don&rsquo;t yet understand, I had to hard reset the board before my code would execute.</p>
+
+<p>Connect pin 5 to your LED, through a resistor (I used 470 ohms) and to ground. It should be blinking! You can now marvel at using all that MCU power to replicate a 555 based circuit. I won&rsquo;t judge.</p>
+
+<h4 id="the-gotchas">The Gotchas</h4>
+
+<p>If you messed something up, and tried to restart OpenOCD to flash again, you will have stumbled on the first gotcha. I don&rsquo;t know the cause of this yet, but once I flashed my board the first time, I could not get back into bootloader/JTAG mode without bringing the BOOT 0 pin high. It must remain high or the JTAG connection stops working.</p>
+
+<p>I suspect this is how it is meant to work, and the programmer is supposed to signal debug mode or something, and isn&rsquo;t doing so correctly. The board has a momentary button that brings BOOT 0 high, and once you do this, you can reconnect via JTAG, but I wasn&rsquo;t able to get the board in a state to reflash without power-cycling. There is a jumper to keep the pin high, and I found it easiest to set that, reboot, flash and then remove it. I&rsquo;ve marked these in the (poorly lit) photo below.</p>
+
+<p><img src="/img/stm-blinky-4.jpg" alt="The Board" />{: .well .img-rounded .img-responsive}</p>
+
+<p>This brings me to debugging. It should be possible. I&rsquo;ve yet to figure it out. I&rsquo;m unsure if it has something to do with my software/hardware configuration, the phase of the moon, or I&rsquo;m just doing something wrong. I&rsquo;ll make a followup post if/when I figure it out.</p>
+
+<p>One other problem I ran into is Evil Pin 2. Evil Pin 2 was my first choice but unfortunately it is &ldquo;special,&rdquo; at least on this particular board. If you look at <a href="/img/lctech-stm32-devboard-schematic.png">the schematic</a> that OlliW42 helpfully reverse engineered, you can see PB2 is tied to BOOT1. Cube will happily let you make it GPIO Output, but it silently fails to ever go high,  due to the jumper marked BOOT 1 that ties it to ground. The trouble is that if we remove that jumper and bring BOOT 1 high, the board goes into an undetermined state of total not-workness.</p>
+
+<p>This cost me several hours of frustration, especially since I couldn&rsquo;t get debugging going. I had no idea if the board was just not executing my code, or if it was some other problem. Fun!</p>
+
+<h4 id="to-be-continued">To be continued</h4>
+
+<p>I will likely post more about my experiments with this super-powerful chip, and other, even more powerful in the same family. I&rsquo;ve a bunch of projects in mind. Should be fun!</p>
+
+<p>I hope this helped you. Feel free to ask me questions. My email address is in the sidebar thingie to the right. Happy hacking!</p>
+ </div>
+    <footer class="post-footer">
+
+  <div class="post-footer-data">
+    
+<div class="tags">
+    
+</div>
+
+    <div class="date"> 23 Jul 2016 </div>
+  </div>
+
+</footer>
+
+
+  
+
+
+</article>
+
+  <footer>
+
+  <div class="social-links-footer">
+
+  
+  <a href="mailto:greg@greglincoln.com"><div class="social-link">Email</div></a>
+  
+
+  
+  <a href="https://github.com/tetious" target="_blank"><div class="social-link">GitHub</div></a>
+  
+
+  
+  <a href="https://gitlab.com/tetious" target="_blank"><div class="social-link">GitLab</div></a>
+  
+
+  
+  <a href="https://twitter.com/tetious" target="_blank"><div class="social-link">Twitter</div></a>
+  
+
+  
+
+  <div class="social-link">
+  <a href="/index.xml" target="_blank">RSS</a>
+  </div>
+
+</div>
+
+
+  <div class="copyright"> Copyright (c) 2019 Greg Lincoln, all rights reserved. </div>
+
+  <div class="poweredby">
+    Powered by <a href="https://gohugo.io/">Hugo</a>.
+  </div>
+
+  </footer>
+
+</div> 
+
+</body>
+</html>
+

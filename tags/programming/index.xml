@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Greg&#39;s Adventures</title>
+    <link>/tags/programming/</link>
+    <description>Recent content in Programming on Greg&#39;s Adventures</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright (c) 2019 Greg Lincoln, all rights reserved.</copyright>
+    <lastBuildDate>Mon, 23 Jun 2008 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reverse a dictionary</title>
+      <link>/2008/06/23/reverse-a-dictionary/</link>
+      <pubDate>Mon, 23 Jun 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/2008/06/23/reverse-a-dictionary/</guid>
+      <description>Have you ever wished your dictionary of &amp;lt;K,V&amp;gt; was in fact of &amp;lt;V,K&amp;gt;? I might be the last person to figure this out, but with LINQ (and a couple lambdas) you can do this with one magical line of code:
+var newDict = oldDict.ToDictionary(l =&amp;gt; l.Value, l =&amp;gt; l.Key);  Neat, eh?</description>
+    </item>
+    
+    <item>
+      <title>Become a Jedi with Resharper</title>
+      <link>/2008/06/20/become-a-jedi-with-resharper/</link>
+      <pubDate>Fri, 20 Jun 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/2008/06/20/become-a-jedi-with-resharper/</guid>
+      <description>If you work in C# or VB.net on a regular basis, you really owe it to yourself to try out Resharper. This tool saves me countless hours.
+James Kovacs put together some fantastic screencasts on &amp;ldquo; Becoming a Jedi&amp;rdquo; that show it in action, if you are curious.
+He hasn&amp;rsquo;t covered the features that make it a boon for test driven development yet, but there&amp;rsquo;s another great screencast that shows that off, and this post provides some additional details on &amp;ldquo;coding in reverse&amp;rdquo; with Resharper.</description>
+    </item>
+    
+    <item>
+      <title>Order of operations</title>
+      <link>/2008/06/19/order-of-operations/</link>
+      <pubDate>Thu, 19 Jun 2008 00:00:00 +0000</pubDate>
+      
+      <guid>/2008/06/19/order-of-operations/</guid>
+      <description>Sometimes I can be such a buffoon. When programming with threads, one must be sure to lock and unlock in the correct order. Also, one must be sure not to do things explicitly marked as no-nos while in a &amp;ldquo;critical section.&amp;rdquo;
+I just lost two hours to this, so I felt the need to whine.</description>
+    </item>
+    
+    <item>
+      <title>On programming for fun.</title>
+      <link>/2007/02/17/on-programming-for-fun/</link>
+      <pubDate>Sat, 17 Feb 2007 00:00:00 +0000</pubDate>
+      
+      <guid>/2007/02/17/on-programming-for-fun/</guid>
+      <description>I wonder if it is the nature of the beast that when someone does something for a living day in and day out, it stops being fun. I&amp;rsquo;m starting to worry that may be the case with me.
+Why am I bringing this up? One reason is due to watching my friend Rab having fun with Python. He&amp;rsquo;s having fun. He&amp;rsquo;s doing it for fun, and thus he&amp;rsquo;s having fun. Doesn&amp;rsquo;t that sound like fun?</description>
+    </item>
+    
+  </channel>
+</rss>
